@@ -14,6 +14,47 @@
             </div>
         </div>
     </div>
+    <div class="navbar navbar-default">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="logo" href="#">
+                    <img alt="logo" src="http://dummyimage.com/125x50/333/fff&amp;text=**Logo**" class="">
+                </a>
+                <form class="navbar-form navbar-left" role="search">
+                    <div class="input-group input-group-sm">
+                        <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" contenteditable="false" type="text">
+                        <div class="input-group-btn">
+                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+
+        </button>
+        <div class="container">
+        <div class="navbar-collapse collapse">
+            <ul class="nav nav-justified">
+                <li><a href="#" class="active">Home</a>
+                </li>
+                <li><a href="#" class="">About us</a>
+                </li>
+                <li><a href="#" class="">Contact</a>
+                </li>
+                <li><a href="#" class="active">Home</a>
+                </li>
+                <li><a href="#" class="">About us</a>
+                </li>
+                <li><a href="#" class="">Contact</a>
+                </li>
+            </ul>
+        </div>
+            </div>
+    </div>
 </header>
 <!--END HEADER-->
 <style>
