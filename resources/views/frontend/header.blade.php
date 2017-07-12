@@ -1,91 +1,151 @@
-<header id="header">
-    <div style="background: #E92844" class="header">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 shop-support">
-                    <div class="support-link">01635731092</div>
-                    <div class="support-link">luongmv@gmail.com</div>
-                </div>
-                <div class="col-md-4 customer-login">
-                    <div class="customer-link"><a href="#">Register</a></div>
-                    <div class="customer-link"><a href="#">Login</a></div>
-                </div>
-
+<div id="home" style="background: url('{{ URL::to('/') }}/images/bg.jpg') center top no-repeat;">
+    <div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2 col-sm-2">
+                <div class="logo"><a href="index.html"><img src="{{URL::to('/')}}/images/logo-GNC.png" alt="FlatShop"></a></div>
             </div>
-        </div>
-    </div>
-    <div class="navbar navbar-default">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="logo" href="#">
-                    <img alt="logo" src="http://dummyimage.com/125x50/333/fff&amp;text=**Logo**" class="">
-                </a>
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="input-group input-group-sm">
-                        <input class="form-control" placeholder="Search" name="srch-term" id="srch-term" contenteditable="false" type="text">
-                        <div class="input-group-btn">
-                            <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i>
-                            </button>
+            <div class="col-md-10 col-sm-10">
+                <div class="header_top">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <ul class="option_nav">
+                                <li class="dorpdown">
+                                    <a href="#">Eng</a>
+                                    <ul class="subnav">
+                                        <li><a href="#">Eng</a></li>
+                                        <li><a href="#">Vns</a></li>
+                                        <li><a href="#">Fer</a></li>
+                                        <li><a href="#">Gem</a></li>
+                                    </ul>
+                                </li>
+                                <li class="dorpdown">
+                                    <a href="#">USD</a>
+                                    <ul class="subnav">
+                                        <li><a href="#">USD</a></li>
+                                        <li><a href="#">UKD</a></li>
+                                        <li><a href="#">FER</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="topmenu">
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">News</a></li>
+                                <li><a href="#">Service</a></li>
+                                <li><a href="#">Recruiment</a></li>
+                                <li><a href="#">Media</a></li>
+                                <li><a href="#">Support</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-3">
+                            <ul class="usermenu">
+                                <li><a href="checkout.html" class="log">Login</a></li>
+                                <li><a href="checkout2.html" class="reg">Register</a></li>
+                            </ul>
                         </div>
                     </div>
-                </form>
+                </div>
+                <div class="clearfix"></div>
+                <div class="header_bottom navbar-fixed-top">
+                    <ul class="option">
+                        <li id="search" class="search">
+                            <form><input class="search-submit" type="submit" value=""><input class="search-input" placeholder="Enter your search term..." type="text" value="" name="search"></form>
+                        </li>
+                        <li class="option-cart">
+                            <a href="#" class="cart-icon">cart <span class="cart_no">02</span></a>
+                            <ul class="option-cart-item">
+                                <li>
+                                    <div class="cart-item">
+                                        <div class="image"><img src="images/products/thum/products-01.png" alt=""></div>
+                                        <div class="item-description">
+                                            <p class="name">Lincoln chair</p>
+                                            <p>Size: <span class="light-red">One size</span><br>Quantity: <span class="light-red">01</span></p>
+                                        </div>
+                                        <div class="right">
+                                            <p class="price">$30.00</p>
+                                            <a href="#" class="remove"><img src="images/remove.png" alt="remove"></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="cart-item">
+                                        <div class="image"><img src="images/products/thum/products-02.png" alt=""></div>
+                                        <div class="item-description">
+                                            <p class="name">Lincoln chair</p>
+                                            <p>Size: <span class="light-red">One size</span><br>Quantity: <span class="light-red">01</span></p>
+                                        </div>
+                                        <div class="right">
+                                            <p class="price">$30.00</p>
+                                            <a href="#" class="remove"><img src="images/remove.png" alt="remove"></a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li><span class="total">Total <strong>$60.00</strong></span><button class="checkout" onClick="location.href='checkout.html'">CheckOut</button></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="active dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Home</a>
+                                <div class="dropdown-menu">
+                                    <ul class="mega-menu-links">
+                                        <li><a href="index.html">home</a></li>
+                                        <li><a href="home2.html">home2</a></li>
+                                        <li><a href="home3.html">home3</a></li>
+                                        <li><a href="productlitst.html">Productlitst</a></li>
+                                        <li><a href="productgird.html">Productgird</a></li>
+                                        <li><a href="details.html">Details</a></li>
+                                        <li><a href="cart.html">Cart</a></li>
+                                        <li><a href="checkout.html">CheckOut</a></li>
+                                        <li><a href="checkout2.html">CheckOut2</a></li>
+                                        <li><a href="contact.html">contact</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li><a href="productgird.html">men</a></li>
+                            <li><a href="productlitst.html">women</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Fashion</a>
+                                <div class="dropdown-menu mega-menu">
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <ul class="mega-menu-links">
+                                                <li><a href="productgird.html">New Collection</a></li>
+                                                <li><a href="productgird.html">Shirts & tops</a></li>
+                                                <li><a href="productgird.html">Laptop & Brie</a></li>
+                                                <li><a href="productgird.html">Dresses</a></li>
+                                                <li><a href="productgird.html">Blazers & Jackets</a></li>
+                                                <li><a href="productgird.html">Shoulder Bags</a></li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <ul class="mega-menu-links">
+                                                <li><a href="productgird.html">New Collection</a></li>
+                                                <li><a href="productgird.html">Shirts & tops</a></li>
+                                                <li><a href="productgird.html">Laptop & Brie</a></li>
+                                                <li><a href="productgird.html">Dresses</a></li>
+                                                <li><a href="productgird.html">Blazers & Jackets</a></li>
+                                                <li><a href="productgird.html">Shoulder Bags</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li><a href="productgird.html">gift</a></li>
+                            <li><a href="productgird.html">kids</a></li>
+                            <li><a href="productgird.html">blog</a></li>
+                            <li><a href="productgird.html">jewelry</a></li>
+                            <li><a href="contact.html">contact us</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-
-        </button>
-        <div class="container">
-        <div class="navbar-collapse collapse">
-            <ul class="nav nav-justified">
-                <li><a href="#" class="active">Home</a>
-                </li>
-                <li><a href="#" class="">About us</a>
-                </li>
-                <li><a href="#" class="">Contact</a>
-                </li>
-                <li><a href="#" class="active">Home</a>
-                </li>
-                <li><a href="#" class="">About us</a>
-                </li>
-                <li><a href="#" class="">Contact</a>
-                </li>
-            </ul>
-        </div>
-            </div>
     </div>
-</header>
-<!--END HEADER-->
-<style>
-    .shop-support{
-    }
-    .customer-login{
-        text-align: right;
-        padding-right: 0px;
-    }
-    ul.mytoplinks-login{
-        list-style: none;
-    }
-    .customer-link{
-        padding: 3px;
-        float: right;
-        margin-left: 7px;
-        border-left: 1px solid #B8001F;
-        margin-right: 3px;
-    }
-    .customer-link a{
-        color: #ffffff;
-    }
-    div.support-link{
-        padding: 3px;
-        float: left;
-        margin-left: 7px;
-        border-left: 1px solid #B8001F;
-        margin-right: 3px;
-        color: #ffffff;
-    }
-    .customer-link a:hover{
-        text-decoration: none;
-    }
-</style>
+</div>
+    </div>
+<div class="clearfix"></div>
