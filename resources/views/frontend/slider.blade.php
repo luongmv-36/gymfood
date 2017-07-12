@@ -16,6 +16,9 @@
         </div>
     </div>
 </div>
+<div>
+    <hr/>
+</div>
 
 <style>
     .flex-caption {

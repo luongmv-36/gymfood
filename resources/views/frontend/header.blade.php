@@ -1,4 +1,4 @@
-<div id="home" style="background: url('{{ URL::to('/') }}/images/bg.jpg') center top no-repeat;">
+<div id="home" style="background-color: #FCBA63">
     <div class="header">
     <div class="container">
         <div class="row">
