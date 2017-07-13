@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-2 col-sm-2">
-                <div class="logo"><a href="index.html"><img src="{{URL::to('/')}}/images/logo-GNC.png" alt="FlatShop"></a></div>
+                <div class="logo"><a href="{{route('home')}}"><img src="{{URL::to('/')}}/images/logo-GNC.png" alt="FlatShop"></a></div>
             </div>
             <div class="col-md-10 col-sm-10">
                 <div class="header_top">
@@ -58,31 +58,31 @@
                             <ul class="option-cart-item">
                                 <li>
                                     <div class="cart-item">
-                                        <div class="image"><img src="images/products/thum/products-01.png" alt=""></div>
+                                        <div class="image"><img src="{{URL::to('/')}}/images/products/thum/products-01.png" alt=""></div>
                                         <div class="item-description">
                                             <p class="name">Lincoln chair</p>
                                             <p>Size: <span class="light-red">One size</span><br>Quantity: <span class="light-red">01</span></p>
                                         </div>
                                         <div class="right">
                                             <p class="price">$30.00</p>
-                                            <a href="#" class="remove"><img src="images/remove.png" alt="remove"></a>
+                                            <a href="#" class="remove"><img src="{{URL::to('/')}}/images/remove.png" alt="remove"></a>
                                         </div>
                                     </div>
                                 </li>
                                 <li>
                                     <div class="cart-item">
-                                        <div class="image"><img src="images/products/thum/products-02.png" alt=""></div>
+                                        <div class="image"><img src="{{URL::to('/')}}/images/products/thum/products-02.png" alt=""></div>
                                         <div class="item-description">
                                             <p class="name">Lincoln chair</p>
                                             <p>Size: <span class="light-red">One size</span><br>Quantity: <span class="light-red">01</span></p>
                                         </div>
                                         <div class="right">
                                             <p class="price">$30.00</p>
-                                            <a href="#" class="remove"><img src="images/remove.png" alt="remove"></a>
+                                            <a href="#" class="remove"><img src="{{URL::to('/')}}/images/remove.png" alt="remove"></a>
                                         </div>
                                     </div>
                                 </li>
-                                <li><span class="total">Total <strong>$60.00</strong></span><button class="checkout" onClick="location.href='checkout.html'">CheckOut</button></li>
+                                <li><span class="total">Total <strong>$60.00</strong></span><button class="checkout" onClick="location.href='{{route('cart.view')}}'">CheckOut</button></li>
                             </ul>
                         </li>
                     </ul>

@@ -20,3 +20,8 @@ Route::get('product/{id}-{slug}',[
    'as' =>'product.view',
    'uses'=> 'ProductController@view' 
 ]);
+
+Route::get('cart/view',[
+    'as' =>'cart.view',
+    'uses'=> 'CartController@view'
+]);
