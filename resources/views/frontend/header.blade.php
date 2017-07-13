@@ -149,3 +149,9 @@
 </div>
     </div>
 <div class="clearfix"></div>
+<style>
+    .thumbnail img, .thumbnail a img{
+        height: 220px;
+        max-width: 150px;
+    }
+</style>

@@ -13,7 +13,11 @@
     <link href="{{ URL::to('/') }}/css/sequence-looptheme.css" rel="stylesheet" media="all"/>
     <link href="{{ URL::to('/') }}/css/style.css" rel="stylesheet">
     <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]-->
+
     @yield('extra_css')
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 </head>
 <!-- END HEAD -->
 <!-- BEGIN BODY -->

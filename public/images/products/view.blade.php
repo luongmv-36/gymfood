@@ -12,38 +12,33 @@
                     <div class="products-details">
                         <div class="preview_image">
                             <div class="preview-small">
-                                <img id="zoom_03" src="{{ URL::to('/')}}/images/products/medium/products-01.jpg" data-zoom-image="{{ URL::to('/') }}/images/products/large/products-01.jpg" alt="">
+                                <img id="zoom_03" src="images/products/medium/products-01.jpg" data-zoom-image="images/products/Large/products-01.jpg" alt="">
                             </div>
                             <div class="thum-image">
                                 <ul id="gallery_01" class="prev-thum">
                                     <li>
-                                        <a href="#" data-image="{{ URL::to('/')}}/images/products/medium/products-01.jpg" data-zoom-image="{{ URL::to('/') }}/images/products/large/products-01.jpg">
-                                            <img src="{{ URL::to('/')}}/images/products/thum/products-01.png" alt="">
+                                        <a href="#" data-image="images/products/medium/products-01.jpg" data-zoom-image="images/products/Large/products-01.jpg">
+                                            <img src="images/products/thum/products-01.png" alt="">
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" data-image="{{ URL::to('/')}}/images/products/medium/products-01.jpg" data-zoom-image="{{ URL::to('/') }}/images/products/large/products-01.jpg">
-                                            <img src="{{ URL::to('/')}}/images/products/thum/products-01.png" alt="">
+                                        <a href="#" data-image="images/products/medium/products-02.jpg" data-zoom-image="images/products/Large/products-02.jpg">
+                                            <img src="images/products/thum/products-02.png" alt="">
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" data-image="{{ URL::to('/')}}/images/products/medium/products-02.jpg" data-zoom-image="{{ URL::to('/') }}/images/products/large/products-02.jpg">
-                                            <img src="{{ URL::to('/')}}/images/products/thum/products-02.png" alt="">
+                                        <a href="#" data-image="images/products/medium/products-03.jpg" data-zoom-image="images/products/Large/products-03.jpg">
+                                            <img src="images/products/thum/products-03.png" alt="">
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" data-image="images/products/medium/products-03.jpg" data-zoom-image="{{ URL::to('/') }}/images/products/large/products-03.jpg">
-                                            <img src="{{ URL::to('/')}}/images/products/thum/products-03.png" alt="">
+                                        <a href="#" data-image="images/products/medium/products-04.jpg" data-zoom-image="images/products/Large/products-04.jpg">
+                                            <img src="images/products/thum/products-04.png" alt="">
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="#" data-image="images/products/medium/products-04.jpg" data-zoom-image="{{ URL::to('/') }}/images/products/large/products-04.jpg">
-                                            <img src="{{ URL::to('/')}}/images/products/thum/products-04.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" data-image="images/products/medium/products-05.jpg" data-zoom-image="{{ URL::to('/') }}/images/products/large/products-05.jpg">
-                                            <img src="{{ URL::to('/')}}/images/products/thum/products-05.png" alt="">
+                                        <a href="#" data-image="images/products/medium/products-05.jpg" data-zoom-image="images/products/Large/products-05.jpg">
+                                            <img src="images/products/thum/products-05.png" alt="">
                                         </a>
                                     </li>
                                 </ul>
@@ -832,6 +827,4 @@
 
 @section('extra_js')
     <script type="text/javascript" src="{{ URL::to('/') }}/js/jquery.elevatezoom.js" ></script>
-    <script type="text/javascript" src="{{ URL::to('/') }}/js/jquery.carouFredSel-6.2.1-packed.js">
-
 @stop
