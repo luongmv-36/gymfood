@@ -15,3 +15,8 @@ Route::get('/', [
    'as' => 'home',
    'uses' => 'HomeController@index'
 ]);
+
+Route::get('product/{id}-{slug}',[
+   'as' =>'product.view',
+   'uses'=> 'ProductController@view' 
+]);
