@@ -10,4 +10,8 @@ class CartController extends Controller
     public function view(){
         return view('frontend.cart.view');
     }
+
+    public function checkout(){
+        return view('frontend.cart.checkout');
+    }
 }

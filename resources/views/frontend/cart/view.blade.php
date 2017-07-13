@@ -87,7 +87,7 @@
                                       <div class="value-price" style="float: right">999 VNĐ</div>
                                   </div>
                                   <hr/>
-                                  <button type="button" title="Proceed to Checkout" class="" style="background-color: red;color:#ffffff;width: 100%" onclick="window.location='https://www.gnclivewell.com.my/checkout/onepage/';"><span><span>Proceed to Checkout</span></span></button>
+                                  <button type="button" title="Proceed to Checkout" class="" style="background-color: red;color:#ffffff;width: 100%" onclick="window.location='{{route('checkout.cart')}}';"><span><span>Proceed to Checkout</span></span></button>
                               </div>
                           </div>
                       </div>

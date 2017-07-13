@@ -25,3 +25,8 @@ Route::get('cart/view',[
     'as' =>'cart.view',
     'uses'=> 'CartController@view'
 ]);
+
+Route::get('checkout/cart',[
+    'as' =>'checkout.cart',
+    'uses'=> 'CartController@checkout'
+]);
