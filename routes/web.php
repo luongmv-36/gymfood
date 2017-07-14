@@ -30,3 +30,8 @@ Route::get('checkout/cart',[
     'as' =>'checkout.cart',
     'uses'=> 'CartController@checkout'
 ]);
+
+Route::post('checkout/cart',[
+    'as' =>'checkout.step1',
+    'uses'=> 'CheckoutController@step1'
+]);

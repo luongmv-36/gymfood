@@ -11,20 +11,21 @@
                 <div class="checkout-page">
                     <ol class="checkout-steps">
                         <li class="steps active">
-                            <a href="" class="step-title">
+                            <a href="{{route('checkout.cart')}}" class="step-title">
                                 01. checkout opition
                             </a>
                             <div class="step-description">
                                 <div class="row">
                                     <div class="col-md-6 col-sm-6">
-                                        <form method="post" action="">
+                                        <form method="post" action="{{route('checkout.step1')}}">
+                                            {{csrf_field()}}
                                         <div class="new-customer">
                                             <h5>
                                                 New Customer
                                             </h5>
                                             <label>
                               <span class="input-radio">
-                                <input type="radio" name="user">
+                                <input type="radio" name="user_checkout" value="no_register">
                               </span>
                               <span class="text">
                                 Mua hàng mà không cần đăng kí
@@ -32,7 +33,7 @@
                                             </label>
                                             <label>
                               <span class="input-radio">
-                                <input type="radio" name="user">
+                                <input type="radio" name="user_checkout" value="yes_register" checked="checked">
                               </span>
                               <span class="text">
                                  Register with us for future convenience:
