@@ -31,7 +31,32 @@ Route::get('checkout/cart',[
     'uses'=> 'CartController@checkout'
 ]);
 
-Route::post('checkout/cart',[
-    'as' =>'checkout.step1',
-    'uses'=> 'CheckoutController@step1'
+Route::post('checkout/step2',[
+    'as' =>'checkout.step2',
+    'uses'=> 'CheckoutController@step2'
+]);
+
+Route::post('checkout/step3',[
+    'as' =>'checkout.step3',
+    'uses'=> 'CheckoutController@step3'
+]);
+
+Route::post('checkout/step4',[
+    'as' =>'checkout.step4',
+    'uses'=> 'CheckoutController@step4'
+]);
+
+Route::post('checkout/step5',[
+    'as' =>'checkout.step5',
+    'uses'=> 'CheckoutController@step5'
+]);
+
+Route::post('checkout/step6',[
+    'as' =>'checkout.step6',
+    'uses'=> 'CheckoutController@step6'
+]);
+
+Route::post('checkout/order',[
+    'as' =>'checkout.order',
+    'uses'=> 'CheckoutController@order'
 ]);

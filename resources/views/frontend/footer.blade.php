@@ -49,3 +49,8 @@
         </div>
     </div>
 </div>
+<style>
+    .container_fullwidth{
+        padding-bottom: 0px;
+    }
+</style>

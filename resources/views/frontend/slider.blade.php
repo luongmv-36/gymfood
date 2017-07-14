@@ -1,9 +1,11 @@
-<div class="hom-slider">
+<div class="hom-slider" xmlns="http://www.w3.org/1999/html">
     <div class="container" style="padding-right: 0px;padding-left: 0px">
         <div class="flexslider">
             <ul class="slides">
                 <li>
-                    <img src="{{ URL::to('/') }}/images/slider/slider_1.jpg" />
+                    <a href="#" title="XXXX">
+                    <img src="{{ URL::to('/') }}/images/slider/slider_1.jpg" title="YYYY"/>
+                    </a>
                 </li>
                 <li>
                     <img src="{{ URL::to('/') }}/images/slider/slider_2.jpg" />
@@ -16,9 +18,7 @@
         </div>
     </div>
 </div>
-<div>
-    <hr/>
-</div>
+
 
 <style>
     .flex-caption {
@@ -35,10 +35,3 @@
         max-width: 100%;
     }
 </style>
-<script>
-    $(document).ready(function() {
-        $('.flexslider').flexslider({
-            animation: "slide"
-        });
-    });
-</script>

@@ -178,3 +178,12 @@
         </div>
     </div>
 @stop
+@section('extra_js')
+    <script>
+        jQuery(document).ready(function() {
+            $('.flexslider').flexslider({
+                animation: "slide"
+            });
+        });
+    </script>
+    @stop

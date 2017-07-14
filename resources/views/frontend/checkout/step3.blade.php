@@ -15,12 +15,17 @@
                                 01. checkout opition
                             </a>
                         </li>
-                        <li class="steps active">
+                        <li class="steps">
                             <a href="checkout2.html" class="step-title">
                                 02. billing information
                             </a>
+                        </li>
+                        <li class="steps active">
+                            <a href="checkout2.html" class="step-title">
+                                03. Shipping information
+                            </a>
                             <div class="step-description">
-                                <form method="post" action="{{route('checkout.step3')}}">
+                                <form method="post" action="{{route('checkout.step4')}}">
                                     {{csrf_field()}}
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6">
@@ -163,17 +168,6 @@
                                                     </label>
                                                     <input type="text" class="input namefild" name="">
                                                 </div>
-                                                <p class="privacy">
-                                <span class="input-radio">
-                                  <input class="" type="radio" name="agree" required>
-                                </span>
-                                <span class="text">
-                                  I have read and agree to the
-                                  <a href="#" class="red">
-                                    Privacy Policy
-                                  </a>
-                                </span>
-                                                </p>
                                                 <button type="submit">
                                                     Continue
                                                 </button>
@@ -183,11 +177,6 @@
                                 </form>
                             </div>
 
-                        </li>
-                        <li class="steps">
-                            <a href="checkout2.html" class="step-title">
-                                03. Shipping information
-                            </a>
                         </li>
                         <li class="steps">
                             <a href="#" class="step-title">
