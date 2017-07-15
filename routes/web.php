@@ -70,3 +70,32 @@ Route::get('category/list/{id}',[
     'as' =>'category.productlist',
     'uses'=> 'CategoryController@productlist'
 ]);
+
+//Customer
+Route::get('customer/register',[
+    'as' => 'customer.register',
+    'uses' => 'CustomerController@form_register'
+]);
+
+Route::post('customer/register',[
+    'as' => 'customer.register',
+    'uses' => 'CustomerController@register'
+]);
+
+Route::get('customer/login',[
+    'as' => 'customer.login',
+    'uses' => 'CustomerController@form_login'
+]);
+
+Route::post('customer/login',[
+    'as' => 'customer.login',
+    'uses' => 'CustomerController@login'
+]);
+
+Route::get('customer/logout',[
+    'as' => 'customer.logout',
+    'uses' => 'CustomerController@logout'
+]);
+//Auth::routes();
+//
+//Route::get('/home', 'HomeController@index')->name('home');

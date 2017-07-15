@@ -12,8 +12,13 @@
                         </div>
                         <div class="col-md-3">
                             <ul class="usermenu">
-                                <li><a href="checkout.html" class="log">Login</a></li>
-                                <li><a href="checkout2.html" class="reg">Register</a></li>
+                                @if(Auth::check())
+                                    <li><a href="{{route('customer.login')}}" class="log">{{Auth::user()->name}}</a></li>
+                                    <li><a href="{{route('customer.logout')}}" class="reg">Logout</a></li>
+                                @else
+                                 <li><a href="{{route('customer.login')}}" class="log">Login</a></li>
+                                 <li><a href="{{route('customer.register')}}" class="reg">Register</a></li>
+                                    @endif
                             </ul>
                         </div>
                     </div>
