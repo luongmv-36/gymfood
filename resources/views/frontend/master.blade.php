@@ -12,8 +12,10 @@
     <link rel="stylesheet" href="{{ URL::to('/') }}/css/flexslider.css" type="text/css" media="screen"/>
     <link href="{{ URL::to('/') }}/css/sequence-looptheme.css" rel="stylesheet" media="all"/>
     <link href="{{ URL::to('/') }}/css/style.css" rel="stylesheet">
-    <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]-->
     <script type="text/javascript" src="{{ URL::to('/') }}/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="{{ URL::to('/') }}/js/jquery.elevatezoom.js" ></script>
 
     @yield('extra_css')
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

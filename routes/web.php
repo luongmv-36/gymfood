@@ -60,3 +60,13 @@ Route::post('checkout/order',[
     'as' =>'checkout.order',
     'uses'=> 'CheckoutController@order'
 ]);
+
+Route::get('category/gird/{id}',[
+    'as' =>'category.productgird',
+    'uses'=> 'CategoryController@productgird'
+]);
+
+Route::get('category/list/{id}',[
+    'as' =>'category.productlist',
+    'uses'=> 'CategoryController@productlist'
+]);

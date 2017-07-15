@@ -6,54 +6,10 @@
     <div class="clearfix"></div>
     <div class="container_fullwidth">
         <div class="container">
-            <div class="row">
-                <div class="col-md-9">
                     <div class="products-details">
                         <div class="preview_image">
                             <div class="preview-small">
-                                <img id="zoom_03" src="{{ URL::to('/')}}/images/products/medium/products-01.jpg" data-zoom-image="{{ URL::to('/') }}/images/products/large/products-01.jpg" alt="">
-                            </div>
-                            <div class="thum-image">
-                                <ul id="gallery_01" class="prev-thum">
-                                    <li>
-                                        <a href="#" data-image="{{ URL::to('/')}}/images/products/medium/products-01.jpg" data-zoom-image="{{ URL::to('/') }}/images/products/large/products-01.jpg">
-                                            <img src="{{ URL::to('/')}}/images/products/thum/products-01.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" data-image="{{ URL::to('/')}}/images/products/medium/products-01.jpg" data-zoom-image="{{ URL::to('/') }}/images/products/large/products-01.jpg">
-                                            <img src="{{ URL::to('/')}}/images/products/thum/products-01.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" data-image="{{ URL::to('/')}}/images/products/medium/products-02.jpg" data-zoom-image="{{ URL::to('/') }}/images/products/large/products-02.jpg">
-                                            <img src="{{ URL::to('/')}}/images/products/thum/products-02.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" data-image="images/products/medium/products-03.jpg" data-zoom-image="{{ URL::to('/') }}/images/products/large/products-03.jpg">
-                                            <img src="{{ URL::to('/')}}/images/products/thum/products-03.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" data-image="images/products/medium/products-04.jpg" data-zoom-image="{{ URL::to('/') }}/images/products/large/products-04.jpg">
-                                            <img src="{{ URL::to('/')}}/images/products/thum/products-04.png" alt="">
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#" data-image="images/products/medium/products-05.jpg" data-zoom-image="{{ URL::to('/') }}/images/products/large/products-05.jpg">
-                                            <img src="{{ URL::to('/')}}/images/products/thum/products-05.png" alt="">
-                                        </a>
-                                    </li>
-                                </ul>
-                                <a class="control-left" id="thum-prev" href="javascript:void(0);">
-                                    <i class="fa fa-chevron-left">
-                                    </i>
-                                </a>
-                                <a class="control-right" id="thum-next" href="javascript:void(0);">
-                                    <i class="fa fa-chevron-right">
-                                    </i>
-                                </a>
+                                <img width="100%" height="100%" id="zoom_01" src='{{ URL::to('/')}}/images/test/small/image1.png' data-zoom-image="{{ URL::to('/')}}/images/test/large/image1.jpg"/>
                             </div>
                         </div>
                         <div class="products-description">
@@ -337,71 +293,6 @@
                     </div>
                     <div class="clearfix">
                     </div>
-                    <div class="clearfix">
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="clearfix">
-                    </div>
-                    <div class="fbl-box leftbar">
-                        <h3 class="title">
-                            Facebook
-                        </h3>
-                <span class="likebutton">
-                  <a href="#">
-                    <img src="{{ URL::to('/')}}/images/fblike.png" alt="">
-                  </a>
-                </span>
-                        <p>
-                            12k people like Flat Shop.
-                        </p>
-                        <ul>
-                            <li>
-                                <a href="#">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                </a>
-                            </li>
-                        </ul>
-                        <div class="fbplug">
-                            <a href="#">
-                    <span>
-                      <img src="{{ URL::to('/')}}/images/fbicon.png" alt="">
-                    </span>
-                                Facebook social plugin
-                            </a>
-                        </div>
-                    </div>
-                    <div class="clearfix">
-                    </div>
-                </div>
-            </div>
             <div class="clearfix">
             </div>
             @include('frontend.our_brand')
@@ -426,6 +317,14 @@
 
         // Get the element with id="defaultOpen" and click on it
         document.getElementById("defaultOpen").click();
+    </script>
+    <script>
+        $('#zoom_01').elevateZoom({
+            zoomType: "inner",
+            cursor: "crosshair",
+            zoomWindowFadeIn: 500,
+            zoomWindowFadeOut: 750
+        });
     </script>
     <style>
         /* Style the tab */
@@ -475,6 +374,6 @@
 @stop
 
 @section('extra_js')
-    <script type="text/javascript" src="{{ URL::to('/') }}/js/jquery.elevatezoom.js" />
+    {{--<script type="text/javascript" src="{{ URL::to('/') }}/js/jquery.elevatezoom.js" />--}}
     <script type="text/javascript" src="{{ URL::to('/') }}/js/jquery.carouFredSel-6.2.1-packed.js"/>
 @stop
