@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use App\CustomerAddress;
 class CustomerController extends Controller
 {
     public function form_register(){
@@ -14,32 +15,49 @@ class CustomerController extends Controller
 
     public function register(Request $request){
         $data = $request->input();
-        $user = new User();
         $this->validate($request,
             [
                 'email' =>'required|email|unique:users,email',
                 'password'=>'required|min:6|max:20',
                 'first_name' => 'required',
-                'last_name' => 'required',
-                'cpassword'=>'required|same:password'
+                'cpassword'=>'required|same:password',
+                'phone'=>'required',
+                'address1' => 'required',
+                'country' => 'required'
             ],
             [
                 'email.required'=> 'Vui lòng nhập email',
                 'email.email' => 'Không đúng định dạng',
+                'first_name.required' => 'First Name không được để trống',
                 'email.unique' => 'Email đã có người sử dụng',
                 'cpassword.same' =>'Mật khẩu không giống nhau',
-                'password.min' => 'Mật khẩu ít nhất 6 kí tự'
+                'password.min' => 'Mật khẩu ít nhất 6 kí tự',
+                'phone.required'=> 'Phone không được để trống',
+                'address1.required' => 'Address 1 không được để trống',
+                'country.required' => 'Country không được để trống'
             ]
         );
 
-
+        //save customer address
+        $address = new CustomerAddress();
+        $address->email = $data['email'];
+        $address->phone = $data['phone'];
+        $address->address1 = $data['address1'];
+        $address->address2 = $data['address2'];
+        $address->city = $data['city'];
+        $address->passcode = $data['passcode'];
+        $address->country = $data['country'];
+        $address->save();
+        $id_address = $address->id;
+        //save ccustomer
+        $user = new User();
         $user->name = $data['first_name'].'-'.$data['last_name'];
         $user->email = $data['email'];
         $user->password = Hash::make($data['password']);
+        $user->id_address = $id_address;
         $user->save();
         $a = $user->id;
-       // var_dump($a);
-        return redirect()->back()->with('thanhcong','Đã tạo thành công id ='.$a);
+        return redirect()->back()->with('thanhcong','Đã tạo thành công id ='.$a.' và id address là '.$id_address);
     }
 
     public function form_login(){

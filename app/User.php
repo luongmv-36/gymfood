@@ -26,4 +26,8 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function customerAddress(){
+        $this->belongsTo('App\CustomerAddress','id_address','id');
+    }
 }
