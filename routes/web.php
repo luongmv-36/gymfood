@@ -99,3 +99,8 @@ Route::get('customer/logout',[
 //Auth::routes();
 //
 //Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('admin/index',[
+   'as' => 'dashboard',
+    'uses'=>'Admin\DashboardController@dashboard'
+]);
