@@ -85,5 +85,6 @@
 <script src="{{URL::to('/')}}/adminhtml/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{URL::to('/')}}/adminhtml/dist/js/demo.js"></script>
+    @yield('extra_js');
 </body>
 </html>

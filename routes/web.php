@@ -104,3 +104,7 @@ Route::get('admin/index',[
    'as' => 'dashboard',
     'uses'=>'Admin\DashboardController@dashboard'
 ]);
+Route::get('admin/product/list',[
+    'as' => 'admin.product.list',
+    'uses'=>'Admin\ProductController@listProduct'
+]);
