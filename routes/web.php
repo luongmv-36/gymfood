@@ -108,3 +108,16 @@ Route::get('admin/product/list',[
     'as' => 'admin.product.list',
     'uses'=>'Admin\ProductController@listProduct'
 ]);
+Route::get('admin/category/list',[
+    'as' => 'admin.category.list',
+    'uses'=>'Admin\CategoryController@listCategory'
+]);
+Route::get('admin/category/create',[
+    'as' => 'admin.category.create',
+    'uses'=>'Admin\CategoryController@formCreate'
+]);
+
+Route::post('admin/category/create',[
+    'as' => 'admin.category.postcreate',
+    'uses'=>'Admin\CategoryController@create'
+]);

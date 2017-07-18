@@ -41,7 +41,7 @@
                 </a>
                 <ul class="treeview-menu">
                     <li><a href="{{route('admin.product.list')}}"><i class="fa fa-circle-o"></i> Manage Products</a></li>
-                    <li><a href="pages/layout/boxed.html"><i class="fa fa-circle-o"></i> Manage Categories</a></li>
+                    <li><a href="{{route('admin.category.list')}}"><i class="fa fa-circle-o"></i> Manage Categories</a></li>
                 </ul>
             </li>
             <li>
