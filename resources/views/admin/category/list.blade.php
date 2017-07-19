@@ -24,7 +24,10 @@
                         <div class="box-header">
                             <h3 class="box-title">Data Table With Full Features</h3>
                         </div>
-                        <!-- /.box-header -->
+                        @if(Session::has('thongbao'))
+                            <div class="alert alert-success">{{Session::get('thongbao')}}</div>
+                        @endif
+                            <!-- /.box-header -->
                         <div class="box-body">
                             <thead>
                             <tr>
@@ -41,32 +44,21 @@
                                     <th>Name</th>
                                     <th>Path Images</th>
                                     <th>Active</th>
-                                    <th style="background-color: #2ab27b">Action</th>
+                                    <th>Action</th>
                                 </tr>
                                 </thead>
                                 <tbody>
                                 @foreach($category as $item)
                                 <tr>
+                                    <td>{{$item->id}}</td>
                                     <td>{{$item->name}}</td>
-                                    <td>Internet
-                                        Explorer 4.0
-                                    </td>
-                                    <td>Win 95+</td>
-                                    <td> 4</td>
-                                    <td>
+                                    <td>{{$item->images}}</td>
+                                    <td>{{$item->active}}</td>
+                                    <td style="width: 100%">
                                         <div class="btn-group">
-                                            <button type="button" class="btn btn-default">Action</button>
-                                            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                                                <span class="caret"></span>
-                                                <span class="sr-only">Toggle Dropdown</span>
-                                            </button>
-                                            <ul class="dropdown-menu" role="menu">
-                                                <li><a href="#">Action</a></li>
-                                                <li><a href="#">Another action</a></li>
-                                                <li><a href="#">Something else here</a></li>
-                                                <li class="divider"></li>
-                                                <li><a href="#">Separated link</a></li>
-                                            </ul>
+                                            <a type="button" class="btn btn-info" href="{{route('admin.category.create',['id' => $item->id])}}">View</a>
+                                            <a type="button" class="btn btn-primary" href="{{route('admin.category.create',['id' => $item->id])}}">Edit</a>
+                                            <a type="button" class="btn btn-danger" href="{{route('admin.category.delete',['id' => $item->id])}}">Delete</a>
                                         </div>
                                     </td>
                                 </tr>

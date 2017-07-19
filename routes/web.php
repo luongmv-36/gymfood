@@ -112,7 +112,7 @@ Route::get('admin/category/list',[
     'as' => 'admin.category.list',
     'uses'=>'Admin\CategoryController@listCategory'
 ]);
-Route::get('admin/category/create',[
+Route::get('admin/category/create/{id?}',[
     'as' => 'admin.category.create',
     'uses'=>'Admin\CategoryController@formCreate'
 ]);
@@ -120,4 +120,9 @@ Route::get('admin/category/create',[
 Route::post('admin/category/create',[
     'as' => 'admin.category.postcreate',
     'uses'=>'Admin\CategoryController@create'
+]);
+
+Route::get('admin/category/delete/{id?}',[
+    'as' => 'admin.category.delete',
+    'uses'=>'Admin\CategoryController@delete'
 ]);

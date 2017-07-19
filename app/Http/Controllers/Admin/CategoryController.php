@@ -13,8 +13,13 @@ class CategoryController extends Controller
         return view('admin.category.list',compact('category'));
     }
     
-    public function formCreate(){
-        return view('admin.category.new');
+    public function formCreate($id = null){
+        if (isset($id)){
+            $category_data = Category::find($id);
+        }else{
+            $category_data = '';
+        }
+        return view('admin.category.new',compact('category_data'));
     }
 
     public function create(Request $request){
@@ -30,6 +35,13 @@ class CategoryController extends Controller
         );
 
         $category = new Category();
+        $thongbao = "Lưu mới thành công";
+        $check_id = $request->has('id');
+        if ($check_id){
+            $category = Category::find($data['id']);
+            $thongbao = 'Sửa thành công';
+        }
+
         $getimageName = null;
         //upload images
         if ($request->hasFile('images')) {
@@ -40,13 +52,29 @@ class CategoryController extends Controller
         }
         if ($getimageName) {
             $path_images = 'category/' . $getimageName;
+            $category->images = $path_images;
         }else{
             $path_images = null;
         }
         $category->name = $data['name'];
-        $category->images = $path_images;
         $category->active = $request->active;
         $category->save();
-        return redirect()->back()->with('thongbao','Lưu thành công');
+        return redirect()->back()->with('thongbao',$thongbao);
+    }
+
+    public function delete($id = null){
+        $del_file = '';
+        if (!empty($id)){
+            $delete = Category::find($id);
+            $image_path = $delete->images;
+            $image_path = public_path().'/images/'.$image_path;
+            $delete->delete();
+            \File::delete($image_path);
+            $del_file = " Đã xóa file $image_path";
+
+            return redirect()->back()->with('thongbao','Xóa thành công id : '.$id.$del_file);
+        }else{
+            return redirect()->back()->with('thongbao','Không tồn tại  :id '.$id);
+        }
     }
 }

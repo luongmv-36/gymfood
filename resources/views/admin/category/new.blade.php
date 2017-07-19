@@ -18,9 +18,14 @@
         <!-- Main content -->
         <section class="content">
             <div class="row">
+                {{$category_data}}
                     <div class="box box-primary">
                         <div class="box-header with-border">
-                            <h3 class="box-title">Quick Example</h3>
+                            <h3 class="box-title">
+                                @if(!empty($category_data) && $category_data->id)
+                                    Edit : {{$category_data->name}}
+                                @endif
+                            </h3>
                             <a href="{{route('admin.category.list')}}"><button type="submit" class="btn btn-primary" style="float: right"><i class="fa fa-fw fa-step-backward"></i> Back</button></a>
                         </div>
                         <!-- /.box-header -->
@@ -43,21 +48,24 @@
                                 <div class="form-group required">
                                     <label for="inputEmail3" class="col-sm-2 control-label">Name</label>
                                     <div class="col-sm-10">
-                                        <input type="text" class="form-control" required="true" name="name" placeholder="Name">
+                                        <input type="text" class="form-control" required="true" name="name" placeholder="Name" value="<?php echo (!empty($category_data))? $category_data->name : '';?>">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-sm-2 control-label">Active</label>
                                     <div class="col-sm-10">
                                         <select class="form-control" name="active">
-                                            <option value="1" selected>Enable</option>
-                                            <option value="0">Disabled</option>
+                                            <option value="1" <?php echo (!empty($category_data) && $category_data->active == 1)? 'selected' : '';?>>Enable</option>
+                                            <option value="0" <?php echo (!empty($category_data) && $category_data->active == 0)? 'selected' : '';?>>Disabled</option>
                                         </select>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="inputEmail3" class="col-sm-2 control-label">Images On Frontend</label>
                                     <div class="col-sm-10">
+                                        @if(!empty($category_data) && $category_data->id)
+                                        <img src="{{URL::to('/')}}/images/{{$category_data->images}}" width="849px" height="180px"/>
+                                        @endif
                                         <input type="file" name="images">
                                         <p class="help-block">Example block-level help text here.</p>
                                     </div>
@@ -66,6 +74,9 @@
                                     <label for="inputEmail3" class="col-sm-2 control-label"></label>
                                     <div class="col-sm-10">
                                         <div class="box-footer">
+                                            @if(!empty($category_data) && $category_data->id)
+                                            <input style="display: none" type="text" name="id" value="{{$category_data->id}}">
+                                            @endif
                                             <button type="submit" class="btn btn-primary">Save</button>
                                         </div>
                                     </div>
