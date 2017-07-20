@@ -276,6 +276,9 @@
                         </div>
                         <div class="row">
                             <div class="col-md-4 col-sm-6">
+                                @foreach($list_product as $item)
+                                    {{$item->name}}
+                                @endforeach
                                 <div class="products">
                                     <div class="thumbnail">
                                         <a href="details.html">

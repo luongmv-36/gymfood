@@ -8,4 +8,7 @@ class Category extends Model
 {
     protected $table = 'category';
     
+    public function products(){
+        return $this->hasMany('App\Product','category_id','id');
+    }
 }

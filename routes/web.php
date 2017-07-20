@@ -61,12 +61,12 @@ Route::post('checkout/order',[
     'uses'=> 'CheckoutController@order'
 ]);
 
-Route::get('category/gird/{id}',[
+Route::get('category/gird/{id?}',[
     'as' =>'category.productgird',
     'uses'=> 'CategoryController@productgird'
-]);
+])->where('id', '[0-9]+');
 
-Route::get('category/list/{id}',[
+Route::get('category/list/{id?}',[
     'as' =>'category.productlist',
     'uses'=> 'CategoryController@productlist'
 ]);
@@ -104,10 +104,7 @@ Route::get('admin/index',[
    'as' => 'dashboard',
     'uses'=>'Admin\DashboardController@dashboard'
 ]);
-Route::get('admin/product/list',[
-    'as' => 'admin.product.list',
-    'uses'=>'Admin\ProductController@listProduct'
-]);
+//category
 Route::get('admin/category/list',[
     'as' => 'admin.category.list',
     'uses'=>'Admin\CategoryController@listCategory'
@@ -125,4 +122,21 @@ Route::post('admin/category/create',[
 Route::get('admin/category/delete/{id?}',[
     'as' => 'admin.category.delete',
     'uses'=>'Admin\CategoryController@delete'
+]);
+//product
+Route::get('admin/product/list',[
+    'as' => 'admin.product.list',
+    'uses'=>'Admin\ProductController@listProduct'
+]);
+Route::get('admin/product/create/{id?}',[
+    'as' => 'admin.product.create',
+    'uses'=>'Admin\ProductController@formCreate'
+]);
+Route::post('admin/product/create',[
+    'as' => 'admin.product.postcreate',
+    'uses'=>'Admin\ProductController@create'
+]);
+Route::get('admin/product/delete/{id?}',[
+    'as' => 'admin.product.delete',
+    'uses'=>'Admin\ProductController@delete'
 ]);

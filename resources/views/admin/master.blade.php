@@ -27,6 +27,10 @@
     <link rel="stylesheet" href="{{URL::to('/')}}/adminhtml/bower_components/bootstrap-daterangepicker/daterangepicker.css">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="{{URL::to('/')}}/adminhtml/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <!-- jQuery 3 -->
+    <script src="{{URL::to('/')}}/adminhtml/bower_components/jquery/dist/jquery.min.js"></script>
+    <!-- jQuery UI 1.11.4 -->
+    <script src="{{URL::to('/')}}/adminhtml/bower_components/jquery-ui/jquery-ui.min.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,11 +51,6 @@
         @include('admin.control_sidebar')
 </div>
 <!-- ./wrapper -->
-
-<!-- jQuery 3 -->
-<script src="{{URL::to('/')}}/adminhtml/bower_components/jquery/dist/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="{{URL::to('/')}}/adminhtml/bower_components/jquery-ui/jquery-ui.min.js"></script>
 <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
     $.widget.bridge('uibutton', $.ui.button);
@@ -85,6 +84,15 @@
 <script src="{{URL::to('/')}}/adminhtml/dist/js/pages/dashboard.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{URL::to('/')}}/adminhtml/dist/js/demo.js"></script>
-    @yield('extra_js');
+    @yield('extra_js')
+<script>
+    $(document).ready(function () {
+        $('.sidebar-menu li').click(function () {
+            $(this).siblings('li').removeClass('active');
+            $(this).addClass('active');
+        });
+    });
+
+</script>
 </body>
 </html>

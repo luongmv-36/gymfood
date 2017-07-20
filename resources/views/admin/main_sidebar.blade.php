@@ -26,7 +26,7 @@
         <!-- sidebar menu: : style can be found in sidebar.less -->
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="active">
+            <li class="">
                 <a href="{{route('dashboard')}}">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
@@ -40,7 +40,7 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{route('admin.product.list')}}"><i class="fa fa-circle-o"></i> Manage Products</a></li>
+                    <li class=""><a href="{{route('admin.product.list')}}"><i class="fa fa-circle-o"></i> Manage Products</a></li>
                     <li><a href="{{route('admin.category.list')}}"><i class="fa fa-circle-o"></i> Manage Categories</a></li>
                 </ul>
             </li>

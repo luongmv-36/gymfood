@@ -1,6 +1,6 @@
 <div class="our-brand">
     <h3 class="title"><strong>Our </strong> Brands</h3>
-    <div class="control"><a id="prev_brand" class="prev" href="#">&lt;</a><a id="next_brand" class="next" href="#">&gt;</a></div>
+    {{--<div class="control"><a id="prev_brand" class="prev" href="#">&lt;</a><a id="next_brand" class="next" href="#">&gt;</a></div>--}}
     <ul id="braldLogo">
         <li>
 

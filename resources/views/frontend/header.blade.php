@@ -65,15 +65,9 @@
                     <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
                     <div class="navbar-collapse collapse">
                         <ul class="nav navbar-nav">
-                            <li class="active">
-                                <a href="" class="dropdown-toggle" data-toggle="dropdown">Home</a>
-                            </li>
-                            <li><a href="{{route('category.productgird',['id'=>1])}}">menx</a></li>
-                            <li><a href="productlitst.html">women</a></li>
-                            <li><a href="productgird.html">gift</a></li>
-                            <li><a href="productgird.html">kids</a></li>
-                            <li><a href="productgird.html">blog</a></li>
-                            <li><a href="productgird.html">jewelry</a></li>
+                            @foreach($category_menu as $item)
+                            <li class=""><a href="{{route('category.productgird',['id'=>$item->id])}}">{{$item->name}}</a></li>
+                            @endforeach
                             <li><a href="contact.html">contact us</a></li>
                         </ul>
                     </div>

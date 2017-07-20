@@ -94,6 +94,6 @@
             $('#example1').DataTable({
                 'searching'   : false
             });
-        })
+        });
     </script>
 @stop
