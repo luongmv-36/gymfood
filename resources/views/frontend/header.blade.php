@@ -30,35 +30,28 @@
                             <form><input class="search-submit" type="submit" value=""><input class="search-input" placeholder="Enter your search term..." type="text" value="" name="search"></form>
                         </li>
                         <li class="option-cart">
-                            <a href="#" class="cart-icon">cart <span class="cart_no">02</span></a>
+                            <a href="#" class="cart-icon">cart <span class="cart_no">{{count(Session::get('cartItems'))}}</span></a>
                             <ul class="option-cart-item">
+                                @if(Session::has('cartItems'))
+                                    @foreach(Session::get('cartItems') as $item)
                                 <li>
                                     <div class="cart-item">
-                                        <div class="image"><img src="{{URL::to('/')}}/images/products/thum/products-01.png" alt=""></div>
+                                        <div class="image"><img src="{{URL::to('images').'/'.$item['images']}}" alt=""></div>
                                         <div class="item-description">
-                                            <p class="name">Lincoln chair</p>
-                                            <p>Size: <span class="light-red">One size</span><br>Quantity: <span class="light-red">01</span></p>
+                                            <p class="name">{{$item['name']}}</p>
+                                            <p>Size: <span class="light-red">One size</span><br>Quantity: <span class="light-red">{{$item['qty']}}</span></p>
                                         </div>
                                         <div class="right">
-                                            <p class="price">$30.00</p>
-                                            <a href="#" class="remove"><img src="{{URL::to('/')}}/images/remove.png" alt="remove"></a>
+                                            <p class="price">{{$item['price']}}<small>vnđ</small></p>
+                                            <a href="{{route('cart.remove',['id'=> $item['id']])}}" class="remove"><img src="{{URL::to('/')}}/images/remove.png" alt="remove"></a>
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="cart-item">
-                                        <div class="image"><img src="{{URL::to('/')}}/images/products/thum/products-02.png" alt=""></div>
-                                        <div class="item-description">
-                                            <p class="name">Lincoln chair</p>
-                                            <p>Size: <span class="light-red">One size</span><br>Quantity: <span class="light-red">01</span></p>
-                                        </div>
-                                        <div class="right">
-                                            <p class="price">$30.00</p>
-                                            <a href="#" class="remove"><img src="{{URL::to('/')}}/images/remove.png" alt="remove"></a>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li><span class="total">Total <strong>$60.00</strong></span><button class="checkout" onClick="location.href='{{route('cart.view')}}'">CheckOut</button></li>
+                                    @endforeach
+                                <li><span class="total">Total <strong>{{Session::get('grandTotal')}}</strong></span><button class="checkout" onClick="location.href='{{route('cart.view')}}'">CheckOut</button></li>
+                                @else
+                                    <li>Empty</li>
+                                @endif
                             </ul>
                         </li>
                     </ul>

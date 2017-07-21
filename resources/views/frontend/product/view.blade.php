@@ -9,12 +9,12 @@
                     <div class="products-details">
                         <div class="preview_image">
                             <div class="preview-small">
-                                <img width="100%" height="100%" id="zoom_01" src='{{ URL::to('/')}}/images/test/small/image1.png' data-zoom-image="{{ URL::to('/')}}/images/test/large/image1.jpg"/>
+                                <img width="100%" height="100%" id="zoom_01" src='{{ URL::to('images').'/'.$product->images}}' data-zoom-image="{{ URL::to('images').'/'.$product->images_zoom}}"/>
                             </div>
                         </div>
                         <div class="products-description">
                             <h5 class="name">
-                                Lincoln Corner Unit Products
+                                {{$product->name}}
                             </h5>
                             <p>
                                 <img alt="" src="{{ URL::to('/')}}/images/star.png">
@@ -29,41 +29,42 @@
                     </span>
                             </p>
                             <p>
-                                Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrie ces posuere cubilia curae. Proin lectus ipsum, gravida etds mattis vulps utate, tristique ut lectus. Sed et lorem nunc...
+                               <?php echo $product->short_description ?>
                             </p>
                             <hr class="border">
                             <div class="price">
                                 Price :
                     <span class="new_price">
-                      450.00
+                      {{$product->price}}
                       <sup>
-                        $
+                        vnđ
                       </sup>
                     </span>
                     <span class="old_price">
-                      450.00
+                      0.000
                       <sup>
-                        $
+                        vnđ
                       </sup>
                     </span>
                             </div>
                             <hr class="border">
                             <div class="wided">
+                                <form method="post" action="{{route('cart.add')}}">
+                                    {{csrf_field()}}
+                                <input type="hidden" name="product_id" value="{{$product->id}}">
                                 <div class="qty">
                                     Qty &nbsp;&nbsp;:
-                                    <select>
-                                        <option>
-                                            1
-                                        </option>
-                                        <option>
-                                            2
-                                        </option>
+                                    <select name="qty">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
                                     </select>
-                                </div>
-                                <div class="button_group">
-                                    <button class="button" >
+                                    <button class="button" type="submit">
                                         Add To Cart
                                     </button>
+                                </div>
+                                </form>
+                                <div class="button_group">
                                     <button class="button compare">
                                         <i class="fa fa-exchange">
                                         </i>
@@ -97,8 +98,7 @@
                             </div>
                         </div>
                         <div id="Descraption" class="tabcontent">
-                            <h3>London</h3>
-                            <p>London is the capital city of England.</p>
+                            <p><?php echo $product->description?></p>
                         </div>
 
                         <div id="Reviews" class="tabcontent">
@@ -238,8 +238,8 @@
                             </form>
                         </div>
                         <div id="Tags" class="tabcontent">
-                            <h3>Tokyo</h3>
-                            <p>Tokyo is the capital of Japan.</p>
+                            <h3>Tag</h3>
+                            <p>Tag Content</p>
                         </div>
                         <div class="tab-content" >
                             <div class="review">

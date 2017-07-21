@@ -8,6 +8,9 @@
         <div class="container">
                   <div class="row">
                 <div class="col-sm-9">
+                    @if(Session::has('thongbao'))
+                        <div class="alert alert-warning">{{Session::get('thongbao')}}</div>
+                    @endif
                         <table class="table table-condensed">
                             <thead>
                             <tr class="cart_menu">
@@ -19,28 +22,34 @@
                             </tr>
                             </thead>
                             <tbody>
+                            @if(Session::has('cartItems'))
+                                @foreach(Session::get('cartItems') as $item)
                                 <tr style="vertical-align: middle;">
                                     <td class="cart_description">
-                                        <h4 style=""><a href="">P1</a></h4>
+                                        <h4 style=""><a href="">{{$item['name']}}</a></h4>
                                     </td>
                                     <td class="">
-                                        <p>100d</p>
+                                        <p style="font-weight: bold">{{$item['price']}} <small>vnđ</small></p>
                                     </td>
                                     <td class="">
-                                        <form action="" method="post">
+                                        <form action="{{route('cart.add',['type'=> 'update'])}}" method="post">
                                             {{csrf_field()}}
-                                            <input style="width:60px;" class="" type="number" name="quantity" value="" autocomplete="off" size="3" min="0" max="100">
+                                            <input type="hidden" name="product_id" value="{{$item['id']}}">
+                                            <input style="width:70px;" class="" type="number" name="qty" value="{{$item['qty']}}" autocomplete="off" size="3" min="0" max="100">
                                             <button type="submit" class="">Cập Nhật</button>
                                         </form>
                                     </td>
                                     <td class="">
-                                        <p>200</p>
+                                        <p style="font-weight: bold">{{$item['qty']*$item['price']}} <small>vnđ</small></p>
                                     </td>
                                     <td class="">
-                                        <a class="" href=""><i class="fa fa-times"></i></a>
+                                        <a class="" href="{{route('cart.remove',['id'=> $item['id']])}}"><i class="fa fa-times"></i></a>
                                     </td>
                                 </tr>
+                                @endforeach
+                              @else
                                 <tr><td colspan="6">Giỏ hàng của bạn trống!</td></tr>
+                              @endif
                             </tbody>
                         </table>
 

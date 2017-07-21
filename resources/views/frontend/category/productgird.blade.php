@@ -216,7 +216,7 @@
                         <div class="toolbar">
                             <div class="sorter">
                                 <div class="view-mode">
-                                    <a href="{{route('category.productlist',['id' => 1])}}" class="list">
+                                    <a href="{{route('category.productlist',['id' => $list_product->first()->category_id])}}" class="list">
                                         List
                                     </a>
                                     <a href="#" class="grid active">
@@ -275,85 +275,32 @@
                         <div class="clearfix">
                         </div>
                         <div class="row">
-                            <div class="col-md-4 col-sm-6">
-                                @foreach($list_product as $item)
-                                    {{$item->name}}
-                                @endforeach
-                                <div class="products">
-                                    <div class="thumbnail">
-                                        <a href="details.html">
-                                            <img src="images/products/small/products-05.png" alt="Product Name">
-                                        </a>
-                                    </div>
-                                    <div class="productname">
-                                        Iphone 5s Gold 32 Gb 2013
-                                    </div>
-                                    <h4 class="price">
-                                        $451.00
-                                    </h4>
-                                    <div class="button_group">
-                                        <button class="button add-cart" type="button">
-                                            Add To Cart
-                                        </button>
-                                        <button class="button compare" type="button">
-                                            <i class="fa fa-exchange">
-                                            </i>
-                                        </button>
-                                        <button class="button wishlist" type="button">
-                                            <i class="fa fa-heart-o">
-                                            </i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="products">
-                                    <div class="thumbnail">
-                                        <a href="details.html">
-                                            <img src="images/products/small/products-06.png" alt="Product Name">
-                                        </a>
-                                    </div>
-                                    <div class="productname">
-                                        Iphone 5s Gold 32 Gb 2013
-                                    </div>
-                                    <h4 class="price">
-                                        $451.00
-                                    </h4>
-                                    <div class="button_group">
-                                        <button class="button add-cart" type="button">
-                                            Add To Cart
-                                        </button>
-                                        <button class="button compare" type="button">
-                                            <i class="fa fa-exchange">
-                                            </i>
-                                        </button>
-                                        <button class="button wishlist" type="button">
-                                            <i class="fa fa-heart-o">
-                                            </i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                            @foreach($list_product as $product)
                             <div class="col-md-4 col-sm-6">
                                 <div class="products">
                                     <div class="offer">
                                         New
                                     </div>
                                     <div class="thumbnail">
-                                        <a href="details.html">
-                                            <img src="images/products/small/products-07.png" alt="Product Name">
+                                        <a href="{{route('product.view',['id' => $product->id,'slug'=>'detail'])}}">
+                                            <img src="{{URL::to('images').'/'.$product->images}}" alt="{{$product->name}}">
                                         </a>
                                     </div>
                                     <div class="productname">
-                                        Iphone 5s Gold 32 Gb 2013
+                                        {{$product->name}}
                                     </div>
                                     <h4 class="price">
-                                        $451.00
+                                        {{$product->price}}<small>vnđ</small>
                                     </h4>
                                     <div class="button_group">
-                                        <button class="button add-cart" type="button">
+                                        <form action="{{route('cart.add')}}" method="post">
+                                            {{csrf_field()}}
+                                            <input type="hidden" value="{{$product->id}}" name="product_id">
+                                            <input type="hidden" value="1" name="qty">
+                                        <button class="button add-cart" type="submit">
                                             Add To Cart
                                         </button>
+                                        </form>
                                         <button class="button compare" type="button">
                                             <i class="fa fa-exchange">
                                             </i>
@@ -365,180 +312,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="products">
-                                    <div class="thumbnail">
-                                        <a href="details.html">
-                                            <img src="images/products/small/products-05.png" alt="Product Name">
-                                        </a>
-                                    </div>
-                                    <div class="productname">
-                                        Iphone 5s Gold 32 Gb 2013
-                                    </div>
-                                    <h4 class="price">
-                                        $451.00
-                                    </h4>
-                                    <div class="button_group">
-                                        <button class="button add-cart" type="button">
-                                            Add To Cart
-                                        </button>
-                                        <button class="button compare" type="button">
-                                            <i class="fa fa-exchange">
-                                            </i>
-                                        </button>
-                                        <button class="button wishlist" type="button">
-                                            <i class="fa fa-heart-o">
-                                            </i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="products">
-                                    <div class="thumbnail">
-                                        <a href="details.html">
-                                            <img src="images/products/small/products-06.png" alt="Product Name">
-                                        </a>
-                                    </div>
-                                    <div class="productname">
-                                        Iphone 5s Gold 32 Gb 2013
-                                    </div>
-                                    <h4 class="price">
-                                        $451.00
-                                    </h4>
-                                    <div class="button_group">
-                                        <button class="button add-cart" type="button">
-                                            Add To Cart
-                                        </button>
-                                        <button class="button compare" type="button">
-                                            <i class="fa fa-exchange">
-                                            </i>
-                                        </button>
-                                        <button class="button wishlist" type="button">
-                                            <i class="fa fa-heart-o">
-                                            </i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="products">
-                                    <div class="offer">
-                                        New
-                                    </div>
-                                    <div class="thumbnail">
-                                        <a href="details.html">
-                                            <img src="images/products/small/products-07.png" alt="Product Name">
-                                        </a>
-                                    </div>
-                                    <div class="productname">
-                                        Iphone 5s Gold 32 Gb 2013
-                                    </div>
-                                    <h4 class="price">
-                                        $451.00
-                                    </h4>
-                                    <div class="button_group">
-                                        <button class="button add-cart" type="button">
-                                            Add To Cart
-                                        </button>
-                                        <button class="button compare" type="button">
-                                            <i class="fa fa-exchange">
-                                            </i>
-                                        </button>
-                                        <button class="button wishlist" type="button">
-                                            <i class="fa fa-heart-o">
-                                            </i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="products">
-                                    <div class="thumbnail">
-                                        <a href="details.html">
-                                            <img src="images/products/small/products-05.png" alt="Product Name">
-                                        </a>
-                                    </div>
-                                    <div class="productname">
-                                        Iphone 5s Gold 32 Gb 2013
-                                    </div>
-                                    <h4 class="price">
-                                        $451.00
-                                    </h4>
-                                    <div class="button_group">
-                                        <button class="button add-cart" type="button">
-                                            Add To Cart
-                                        </button>
-                                        <button class="button compare" type="button">
-                                            <i class="fa fa-exchange">
-                                            </i>
-                                        </button>
-                                        <button class="button wishlist" type="button">
-                                            <i class="fa fa-heart-o">
-                                            </i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="products">
-                                    <div class="thumbnail">
-                                        <a href="details.html">
-                                            <img src="images/products/small/products-06.png" alt="Product Name">
-                                        </a>
-                                    </div>
-                                    <div class="productname">
-                                        Iphone 5s Gold 32 Gb 2013
-                                    </div>
-                                    <h4 class="price">
-                                        $451.00
-                                    </h4>
-                                    <div class="button_group">
-                                        <button class="button add-cart" type="button">
-                                            Add To Cart
-                                        </button>
-                                        <button class="button compare" type="button">
-                                            <i class="fa fa-exchange">
-                                            </i>
-                                        </button>
-                                        <button class="button wishlist" type="button">
-                                            <i class="fa fa-heart-o">
-                                            </i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-6">
-                                <div class="products">
-                                    <div class="offer">
-                                        New
-                                    </div>
-                                    <div class="thumbnail">
-                                        <a href="details.html">
-                                            <img src="images/products/small/products-07.png" alt="Product Name">
-                                        </a>
-                                    </div>
-                                    <div class="productname">
-                                        Iphone 5s Gold 32 Gb 2013
-                                    </div>
-                                    <h4 class="price">
-                                        $451.00
-                                    </h4>
-                                    <div class="button_group">
-                                        <button class="button add-cart" type="button">
-                                            Add To Cart
-                                        </button>
-                                        <button class="button compare" type="button">
-                                            <i class="fa fa-exchange">
-                                            </i>
-                                        </button>
-                                        <button class="button wishlist" type="button">
-                                            <i class="fa fa-heart-o">
-                                            </i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                           @endforeach
                         </div>
                         <div class="clearfix">
                         </div>
@@ -562,10 +336,10 @@
                                             Name
                                         </option>
                                         <option value="
-<strong>
-#
-</strong>
-">
+                                                        <strong>
+                                                        #
+                                                        </strong>
+                                                        ">
                                             Price
                                         </option>
                                     </select>

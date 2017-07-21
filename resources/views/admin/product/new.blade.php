@@ -62,7 +62,7 @@
                                                 <select name="category_id" class="form-control select2" required style="width: 100%;">
                                                    <option></option>
                                                 @foreach($category as $cat)
-                                                    <option value="{{$cat->id}}" <?php echo (!empty($product_data) && $product_data->category_id = $cat->id)? "selected='selected'": ''; ?>>{{$cat->name}}</option>
+                                                    <option value="{{$cat->id}}" <?php echo (!empty($product_data) && $product_data->category_id == $cat->id)? "selected='selected'": ''; ?>>{{$cat->name}}</option>
                                                     @endforeach
                                                 </select>
                                         </div>

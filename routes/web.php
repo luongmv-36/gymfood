@@ -140,3 +140,13 @@ Route::get('admin/product/delete/{id?}',[
     'as' => 'admin.product.delete',
     'uses'=>'Admin\ProductController@delete'
 ]);
+
+//cart
+Route::post('cart/add/{type?}',[
+    'as' => 'cart.add',
+    'uses' => 'CartController@addToCart'
+]);
+Route::get('cart/remove/{id}',[
+    'as'=> 'cart.remove',
+    'uses'=> 'CartController@removeItem'
+]);
