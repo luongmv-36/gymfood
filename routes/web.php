@@ -150,3 +150,8 @@ Route::get('cart/remove/{id}',[
     'as'=> 'cart.remove',
     'uses'=> 'CartController@removeItem'
 ]);
+//Customer
+Route::get('admin/customer/list',[
+    'as' => 'admin.customer',
+    'uses'=> 'Admin\CustomerController@listCustomer'
+]);

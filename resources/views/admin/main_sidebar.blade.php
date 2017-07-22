@@ -45,10 +45,10 @@
                 </ul>
             </li>
             <li>
-                <a href="pages/widgets.html">
-                    <i class="fa fa-th"></i> <span>Widgets</span>
+                <a href="{{route('admin.customer')}}">
+                    <i class="fa fa-users"></i> <span>Customer</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green">new</small>
+              <small class="label pull-right bg-green">103</small>
             </span>
                 </a>
             </li>

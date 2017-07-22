@@ -1,6 +1,7 @@
 <div id="" style="">
     <div class="header" >
     <div class="container">
+        <?php $category_menu = App\Category::all()->where('active',1);?>
         <div class="row">
             <div class="col-md-2 col-sm-2">
                 <div class="logo"><a href="{{route('home')}}"><img src="{{URL::to('/')}}/images/logo-GNC.png" alt="FlatShop"></a></div>

@@ -23,7 +23,9 @@
                             </thead>
                             <tbody>
                             @if(Session::has('cartItems'))
+                                <?php $sub_total = 0;?>
                                 @foreach(Session::get('cartItems') as $item)
+                                    <?php $sub_total += $item['qty']*$item['price'];?>
                                 <tr style="vertical-align: middle;">
                                     <td class="cart_description">
                                         <h4 style=""><a href="">{{$item['name']}}</a></h4>
@@ -60,7 +62,7 @@
                               <ul>
                                   <li>Bạn có mã giảm giá?</li>
                               </ul>
-                                  <form action="" method="post">
+                                  <form action="#" method="get">
                                       {{csrf_field()}}
                                       <div class="">
                                           <div class="form-row">
@@ -78,22 +80,16 @@
                                   <div class="" style="background-color: #f4f4f4;line-height: 20px;margin-bottom: 3px;border: 1px solid #cccccc;padding: 3px;border-radius: 10px;">TOTAL</div>
                                   <div class="item-total" style="margin: 10px 0px; padding: 3px">
                                       <div class="label-price" style="float: left">Subtotal</div>
-                                      <div class="value-price" style="float: right">999 VNĐ</div>
+                                      <div class="value-price" style="float: right">{{$sub_total}} VNĐ</div>
+                                  </div>
+                                  <div class="item-total" style="margin: 10px 0px; padding: 3px">
+                                      <div class="label-price" style="float: left">Tax</div>
+                                      <div class="value-price" style="float: right">0 VNĐ</div>
                                   </div>
                                   <hr/>
                                   <div class="item-total" style="margin: 10px 0px; padding: 3px">
-                                      <div class="label-price" style="float: left">Subtotal</div>
-                                      <div class="value-price" style="float: right">999 VNĐ</div>
-                                  </div>
-                                  <hr/>
-                                  <div class="item-total" style="margin: 10px 0px; padding: 3px">
-                                      <div class="label-price" style="float: left">Subtotal</div>
-                                      <div class="value-price" style="float: right">999 VNĐ</div>
-                                  </div>
-                                  <hr/>
-                                  <div class="item-total" style="margin: 10px 0px; padding: 3px">
-                                      <div class="label-price" style="float: left">Subtotal</div>
-                                      <div class="value-price" style="float: right">999 VNĐ</div>
+                                      <div class="label-price" style="float: left">Grand Total</div>
+                                      <div class="value-price" style="float: right">{{Session::get('grandTotal')}} VNĐ</div>
                                   </div>
                                   <hr/>
                                   <button type="button" title="Proceed to Checkout" class="" style="background-color: red;color:#ffffff;width: 100%" onclick="window.location='{{route('checkout.cart')}}';"><span><span>Proceed to Checkout</span></span></button>

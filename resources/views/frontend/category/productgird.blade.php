@@ -275,6 +275,7 @@
                         <div class="clearfix">
                         </div>
                         <div class="row">
+                            @if(!empty($list_product))
                             @foreach($list_product as $product)
                             <div class="col-md-4 col-sm-6">
                                 <div class="products">
@@ -313,6 +314,7 @@
                                 </div>
                             </div>
                            @endforeach
+                           @endif
                         </div>
                         <div class="clearfix">
                         </div>

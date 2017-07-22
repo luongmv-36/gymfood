@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 use Illuminate\Support\Facades\Session;
-
+use Illuminate\Support\Facades\Auth;
 class CartController extends Controller
 {
     
@@ -14,6 +14,10 @@ class CartController extends Controller
     }
 
     public function checkout(){
+        $user = Auth::user()->name;
+        if (Auth::check()){
+            return view('frontend.checkout.step2',['check_user'=> 1,'xacthuc'=> 1]);
+        }
         return view('frontend.cart.checkout');
     }
 
