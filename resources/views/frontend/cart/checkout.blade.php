@@ -88,27 +88,17 @@
                         </li>
                         <li class="steps">
                             <a href="checkout2.html" class="step-title">
-                                02. billing information
+                                02. Address information
                             </a>
                         </li>
                         <li class="steps">
                             <a href="checkout2.html" class="step-title">
-                                03. Shipping information
+                                03. Shipping and Payment
                             </a>
                         </li>
                         <li class="steps">
                             <a href="#" class="step-title">
-                                04. shipping method
-                            </a>
-                        </li>
-                        <li class="steps">
-                            <a href="#" class="step-title">
-                                05. payment information
-                            </a>
-                        </li>
-                        <li class="steps">
-                            <a href="#" class="step-title">
-                                06. oder review
+                                04. oder review
                             </a>
                         </li>
                     </ol>

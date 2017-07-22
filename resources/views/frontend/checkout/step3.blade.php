@@ -17,12 +17,12 @@
                         </li>
                         <li class="steps">
                             <a href="checkout2.html" class="step-title">
-                                02. billing information
+                                02. Address information
                             </a>
                         </li>
                         <li class="steps active">
                             <a href="checkout2.html" class="step-title">
-                                03. Shipping information
+                                03. Shipping And Payment
                             </a>
                             <div class="step-description">
                                 <form method="post" action="{{route('checkout.step4')}}">
@@ -42,73 +42,8 @@
                                                     </label>
                                                     <input type="text" class="input namefild" name="">
                                                 </div>
-                                                <div class="form-row">
-                                                    <label class="lebel-abs">
-                                                        Last Name
-                                                        <strong class="red">
-                                                            *
-                                                        </strong>
-                                                    </label>
-                                                    <input type="text" class="input namefild" name="">
-                                                </div>
-                                                <div class="form-row">
-                                                    <label class="lebel-abs">
-                                                        Email
-                                                        <strong class="red">
-                                                            *
-                                                        </strong>
-                                                    </label>
-                                                    <input type="text" class="input namefild" name="">
-                                                </div>
-                                                <div class="form-row">
-                                                    <label class="lebel-abs">
-                                                        Telephone
-                                                        <strong class="red">
-                                                            *
-                                                        </strong>
-                                                    </label>
-                                                    <input type="text" class="input namefild" name="">
-                                                </div>
-                                                <div class="form-row">
-                                                    <label class="lebel-abs">
-                                                        Fax
-                                                        <strong class="red">
-                                                            *
-                                                        </strong>
-                                                    </label>
-                                                    <input type="text" class="input namefild" name="">
-                                                </div>
-                                                <div class="form-row">
-                                                    <label class="lebel-abs">
-                                                        Company
-                                                        <strong class="red">
-                                                            *
-                                                        </strong>
-                                                    </label>
-                                                    <input type="text" class="input namefild" name="">
-                                                </div>
-                                                <div class="pass-wrap">
-                                                    <div class="form-row">
-                                                        <label class="lebel-abs">
-                                                            Your Password
-                                                            <strong class="red">
-                                                                *
-                                                            </strong>
-                                                        </label>
-                                                        <input type="password" class="input namefild" name="">
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <label class="lebel-abs">
-                                                            Confird Your Password
-                                                            <strong class="red">
-                                                                *
-                                                            </strong>
-                                                        </label>
-                                                        <input type="password" class="input cpass" name="">
-                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
                                         <div class="col-md-6 col-sm-6">
                                             <div class="your-details">
                                                 <h5>
@@ -116,52 +51,7 @@
                                                 </h5>
                                                 <div class="form-row">
                                                     <label class="lebel-abs">
-                                                        Address 01
-                                                        <strong class="red">
-                                                            *
-                                                        </strong>
-                                                    </label>
-                                                    <input type="text" class="input namefild" name="">
-                                                </div>
-                                                <div class="form-row">
-                                                    <label class="lebel-abs">
-                                                        Address 02
-                                                        <strong class="red">
-                                                            *
-                                                        </strong>
-                                                    </label>
-                                                    <input type="text" class="input namefild" name="">
-                                                </div>
-                                                <div class="form-row">
-                                                    <label class="lebel-abs">
-                                                        City
-                                                        <strong class="red">
-                                                            *
-                                                        </strong>
-                                                    </label>
-                                                    <input type="text" class="input namefild" name="">
-                                                </div>
-                                                <div class="form-row">
-                                                    <label class="lebel-abs">
-                                                        Pass Code
-                                                        <strong class="red">
-                                                            *
-                                                        </strong>
-                                                    </label>
-                                                    <input type="text" class="input namefild" name="">
-                                                </div>
-                                                <div class="form-row">
-                                                    <label class="lebel-abs">
-                                                        Country
-                                                        <strong class="red">
-                                                            *
-                                                        </strong>
-                                                    </label>
-                                                    <input type="text" class="input namefild" name="">
-                                                </div>
-                                                <div class="form-row">
-                                                    <label class="lebel-abs">
-                                                        Region / State
+                                                        First Name
                                                         <strong class="red">
                                                             *
                                                         </strong>
@@ -180,17 +70,7 @@
                         </li>
                         <li class="steps">
                             <a href="#" class="step-title">
-                                04. shipping method
-                            </a>
-                        </li>
-                        <li class="steps">
-                            <a href="#" class="step-title">
-                                05. payment information
-                            </a>
-                        </li>
-                        <li class="steps">
-                            <a href="#" class="step-title">
-                                06. oder review
+                                04. oder review
                             </a>
                         </li>
                     </ol>

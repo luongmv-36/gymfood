@@ -3,14 +3,22 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CheckoutController extends Controller
 {
 
     public function step2(Request $request){
-        $check_user = $request->input('user_checkout');
-        $xacthuc = true;
-        return view('frontend.checkout.step2',['check_user'=> $check_user,'xacthuc'=> $xacthuc]);
+        if (Auth::check()) {
+            $user = Auth::user();
+            $id = Auth::id();
+            $c_address = CustomerAddress::find($user->id_address);
+        }else{
+            $user = null;
+            $c_address = null;
+        }
+          return view('frontend.checkout.step2',compact('user','c_address'));
+
     }
 
     public function step3(Request $request){
@@ -41,5 +49,8 @@ class CheckoutController extends Controller
         $order = $request->input();
         $xacthuc = true;
         return view('frontend.checkout.success',['order'=> $order,'xacthuc'=> $xacthuc]);
+    }
+    public function successPage(){
+        return view('frontend.checkout.success');
     }
 }

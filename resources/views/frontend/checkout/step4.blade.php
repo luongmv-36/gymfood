@@ -16,58 +16,62 @@
                             </a>
                         </li>
                         <li class="steps">
-                            <a href="" class="step-title">
-                                02. billing information
-                            </a>
-                        </li>
-                        <li class="steps">
-                            <a href="" class="step-title">
-                                03. Shipping information
-                            </a>
-                        </li>
-                        <li class="steps">
-                            <a href="#" class="step-title">
-                                04. shipping method
+                            <a href="checkout2.html" class="step-title">
+                                02. Address information
                             </a>
                         </li>
                         <li class="steps active">
+                            <a href="checkout2.html" class="step-title">
+                                03. Shipping And Payment
+                            </a>
+                        </li>
+                        <li class="steps">
                             <a href="#" class="step-title">
-                                05. payment information
+                                04. oder review
                             </a>
                             <div class="step-description">
                                 <form method="post" action="{{route('checkout.step6')}}">
                                     {{csrf_field()}}
-                                    <div class="new-customer">
-                                        <h5>
-                                            New Customer
-                                        </h5>
-                                        <label>
-                              <span class="input-radio">
-                                <input type="radio" name="user_checkout" value="no_register">
-                              </span>
-                              <span class="text">
-                                Mua hàng mà không cần đăng kí
-                              </span>
-                                        </label>
-                                        <label>
-                              <span class="input-radio">
-                                <input type="radio" name="user_checkout" value="yes_register" checked="checked">
-                              </span>
-                              <span class="text">
-                                 Register with us for future convenience:
-                              </span>
-                                        </label>
+                                    <div class="row">
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="your-details">
+                                                <h5>
+                                                    Your Persional Details
+                                                </h5>
+                                                <div class="form-row">
+                                                    <label class="lebel-abs">
+                                                        First Name
+                                                        <strong class="red">
+                                                            *
+                                                        </strong>
+                                                    </label>
+                                                    <input type="text" class="input namefild" name="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="your-details">
+                                                <h5>
+                                                    Your Address
+                                                </h5>
+                                                <div class="form-row">
+                                                    <label class="lebel-abs">
+                                                        First Name
+                                                        <strong class="red">
+                                                            *
+                                                        </strong>
+                                                    </label>
+                                                    <input type="text" class="input namefild" name="">
+                                                </div>
+                                                <button type="submit">
+                                                    Purchase
+                                                </button>
+                                            </div>
+                                        </div>
                                     </div>
-                                    <button type="submit">
-                                        Continue
-                                    </button>
                                 </form>
                             </div>
-                         </li>
-                        <li class="steps">
-                            <a href="#" class="step-title">
-                                06. oder review
-                            </a>
+
                         </li>
                     </ol>
                 </div>

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Product;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
+use App\CustomerAddress;
 class CartController extends Controller
 {
     
@@ -14,9 +15,12 @@ class CartController extends Controller
     }
 
     public function checkout(){
-        $user = Auth::user()->name;
+
         if (Auth::check()){
-            return view('frontend.checkout.step2',['check_user'=> 1,'xacthuc'=> 1]);
+            $user = Auth::user();
+            $id = Auth::id();
+            $c_address = CustomerAddress::find($user->id_address);
+            return view('frontend.checkout.step2',compact('user','c_address'));
         }
         return view('frontend.cart.checkout');
     }
