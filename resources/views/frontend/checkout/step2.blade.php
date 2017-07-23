@@ -30,7 +30,6 @@
                                                 <h5>
                                                     Your Persional Details
                                                 </h5>
-                                                @if($user)
                                                     <div class="form-row">
                                                         <label class="lebel-abs">
                                                             Full Name
@@ -40,26 +39,6 @@
                                                         </label>
                                                         <input type="text" class="input namefild" name="name" value="<?php echo ($user)?$user->name:''?>">
                                                     </div>
-                                                @else
-                                                <div class="form-row">
-                                                    <label class="lebel-abs">
-                                                        First Name
-                                                        <strong class="red">
-                                                            *
-                                                        </strong>
-                                                    </label>
-                                                    <input type="text" class="input namefild" name="first_name" value="<?php echo ($user)?$user->name:''?>">
-                                                </div>
-                                                <div class="form-row">
-                                                    <label class="lebel-abs">
-                                                        Last Name
-                                                        <strong class="red">
-                                                            *
-                                                        </strong>
-                                                    </label>
-                                                    <input type="text" class="input namefild" name="last_name">
-                                                </div>
-                                                @endif
                                                 <div class="form-row">
                                                     <label class="lebel-abs">
                                                         Email
@@ -78,28 +57,6 @@
                                                     </label>
                                                     <input type="text" class="input namefild" name="phone" value="<?php echo ($c_address)?$c_address->phone:''?>">
                                                 </div>
-                                                @if(!$user)
-                                                <div class="pass-wrap">
-                                                    <div class="form-row">
-                                                        <label class="lebel-abs">
-                                                            Your Password
-                                                            <strong class="red">
-                                                                *
-                                                            </strong>
-                                                        </label>
-                                                        <input type="password" class="input namefild" name="">
-                                                    </div>
-                                                    <div class="form-row">
-                                                        <label class="lebel-abs">
-                                                            Confird Your Password
-                                                            <strong class="red">
-                                                                *
-                                                            </strong>
-                                                        </label>
-                                                        <input type="password" class="input cpass" name="">
-                                                    </div>
-                                                </div>
-                                                    @endif
                                             </div>
                                         </div>
                                         <div class="col-md-6 col-sm-6">

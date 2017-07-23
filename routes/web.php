@@ -35,6 +35,10 @@ Route::post('checkout/step2',[
     'as' =>'checkout.step2',
     'uses'=> 'CheckoutController@step2'
 ]);
+Route::get('checkout/step2',[
+    'as' =>'checkout.step2',
+    'uses'=> 'CartController@checkout'
+]);
 
 Route::post('checkout/step3',[
     'as' =>'checkout.step3',

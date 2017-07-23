@@ -53,7 +53,8 @@
                                             <h5>
                                                 Rerunning Customer
                                             </h5>
-                                            <form>
+                                            <form method="post" action="{{route('customer.login')}}">
+                                                {{csrf_field()}}
                                                 <div class="form-row">
                                                     <label class="lebel-abs">
                                                         Email
@@ -61,7 +62,7 @@
                                                             *
                                                         </strong>
                                                     </label>
-                                                    <input type="text" class="input namefild" name="">
+                                                    <input type="text" class="input namefild" name="email">
                                                 </div>
                                                 <div class="form-row">
                                                     <label class="lebel-abs">
@@ -70,7 +71,7 @@
                                                             *
                                                         </strong>
                                                     </label>
-                                                    <input type="text" class="input namefild" name="">
+                                                    <input type="text" class="input namefild" name="password">
                                                 </div>
                                                 <p class="forgoten">
                                                     <a href="#">

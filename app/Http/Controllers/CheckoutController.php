@@ -4,11 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class CheckoutController extends Controller
 {
 
     public function step2(Request $request){
+        Session::forget('orderAddress');
+        Session::forget('shippingAndpayment');
         if (Auth::check()) {
             $user = Auth::user();
             $id = Auth::id();
@@ -22,15 +25,22 @@ class CheckoutController extends Controller
     }
 
     public function step3(Request $request){
-        $data_billing = $request->input();
-        $xacthuc = true;
-        return view('frontend.checkout.step3',['data_billing'=> $data_billing,'xacthuc'=> $xacthuc]);
+        $data = $request->input();
+        Session::put('orderAddress',$data);
+        return view('frontend.checkout.step3');
     }
 
     public function step4(Request $request){
-        $data_shipping = $request->input();
-        $xacthuc = true;
-        return view('frontend.checkout.step4',['data_shipping'=> $data_shipping,'xacthuc'=> $xacthuc]);
+        $data = $request->input();
+        Session::put('shippingAndpayment',$data);
+        if (Session::has('orderAddress') && Session::has('shippingAndpayment')){
+            $orderAddress = Session::get('orderAddress');
+            $shippingAndpayment = Session::get('shippingAndpayment');
+        }else{
+            $orderAddress = null;
+            $shippingAndpayment = null;
+        }
+        return view('frontend.checkout.step4',compact('orderAddress','shippingAndpayment'));
     }
 
     public function step5(Request $request){

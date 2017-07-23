@@ -25,48 +25,65 @@
                                 03. Shipping And Payment
                             </a>
                             <div class="step-description">
-                                <form method="post" action="{{route('checkout.step4')}}">
-                                    {{csrf_field()}}
-                                    <div class="row">
-                                        <div class="col-md-6 col-sm-6">
-                                            <div class="your-details">
+                                        <form method="post" action="{{route('checkout.step4')}}">
+                                            {{csrf_field()}}
+                                            <div class="new-customer">
                                                 <h5>
-                                                    Your Persional Details
+                                                    Shipping Method
                                                 </h5>
-                                                <div class="form-row">
-                                                    <label class="lebel-abs">
-                                                        First Name
-                                                        <strong class="red">
-                                                            *
-                                                        </strong>
-                                                    </label>
-                                                    <input type="text" class="input namefild" name="">
-                                                </div>
-                                                </div>
-                                            </div>
-                                        <div class="col-md-6 col-sm-6">
-                                            <div class="your-details">
-                                                <h5>
-                                                    Your Address
-                                                </h5>
-                                                <div class="form-row">
-                                                    <label class="lebel-abs">
-                                                        First Name
-                                                        <strong class="red">
-                                                            *
-                                                        </strong>
-                                                    </label>
-                                                    <input type="text" class="input namefild" name="">
-                                                </div>
-                                                <button type="submit">
-                                                    Continue
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
+                                                <label>
+                              <span class="input-radio">
+                                <input type="radio" name="shipping_method" value="ship1">
+                              </span>
+                              <span class="text">
+                                Shipping 1
+                              </span>
+                                                </label>
+                                                <label>
+                              <span class="input-radio">
+                                <input type="radio" name="shipping_method" value="ship2" checked="checked">
+                              </span>
+                              <span class="text">
+                                 Shipping 2
+                              </span>
+                                                </label>
+                                                <p class="requir">
+                                                    ABC
+                                                </p>
+                                                <label>
+                                                    <h5>
+                                                        Payment Method
+                                                    </h5>
+                                                </label>
 
+                                                <label>
+                              <span class="input-radio">
+                                <input type="radio" name="payment_method" value="payment1">
+                              </span>
+                              <span class="text">
+                                Shipping 1
+                              </span>
+                                                </label>
+                                                <label>
+                              <span class="input-radio">
+                                <input type="radio" name="payment_method" value="payment2" checked="checked">
+                              </span>
+                              <span class="text">
+                                 Shipping 2
+                              </span>
+                                                </label>
+                                                <p class="requir">
+                                                    XYZ
+                                                </p>
+                                                <label>
+                                                    <button type="submit">
+                                                        Continue
+                                                    </button>
+                                                </label>
+                                            </div>
+
+                                        </form>
+                                    </div>
                         </li>
                         <li class="steps">
                             <a href="#" class="step-title">
