@@ -9,10 +9,14 @@
             <div class="row">
                 <div class="clearfix"></div>
                 <div class="checkout-page">
-                    Order #1221121212  Sucesss , Redirect 5s ... to home page
+                    Order #{{$order_id}}  Sucesss , Redirect 5s ... to home page
                 </div>
                 @include('frontend.our_brand')
             </div>
         </div>
     </div>
+    <?php
+            $url = route('home');
+            header("refresh:5;url=$url");
+    ?>
 @stop

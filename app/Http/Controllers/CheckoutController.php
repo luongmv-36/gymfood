@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
-
+use App\Orders;
+use App\OrderAddress;
+use App\OrderItems;
 class CheckoutController extends Controller
 {
 
@@ -50,16 +52,51 @@ class CheckoutController extends Controller
     }
 
     public function step6(Request $request){
-        $payment_method = $request->input();
-        $xacthuc = true;
-        return view('frontend.checkout.step6',['payment_method'=> $payment_method,'xacthuc'=> $xacthuc]);
+        $data = $request->input();
+        $total = Session::get('grandTotal');
+        $items = Session::get('cartItems');
+        $order = new Orders;
+        $order->status = 'pending';
+        $order->total = $total;
+        if (Auth::check()){
+            $order->customer_id = Auth::id();
+        }
+        $order->shipping_method = $request->shipping_method;
+        $order->payment_method = $request->payment_method;
+
+       if ( $order->save()) {
+           $orderAddress = new OrderAddress;
+           $orderAddress->name = $request->name;
+           $orderAddress->phone = $request->phone;
+           $orderAddress->email = $request->email;
+           $orderAddress->address1 = $request->address1;
+           $orderAddress->address2 = $request->address2;
+           $orderAddress->city = $request->city;
+           $orderAddress->country = $request->country;
+           $orderAddress->passcode = $request->passcode;
+           $orderAddress->order_id = $order->id;
+           $orderAddress->save();
+
+           if (is_array($items)){
+               foreach ($items as $item){
+                   $orderItems = new OrderItems;
+                   $orderItems->order_id = $order->id;
+                   $orderItems->product_id = $item['id'];
+                   $orderItems->qty = $item['qty'];
+                   $orderItems->price = $item['price'];
+                   $orderItems->save();
+               }
+           }
+           Session::forget('cartItems');
+           Session::forget('grandTotal');
+
+       }
+
+
+        return view('frontend.checkout.step6',['order_id'=>$order->id]);
     }
 
-    public function order(Request $request){
-        $order = $request->input();
-        $xacthuc = true;
-        return view('frontend.checkout.success',['order'=> $order,'xacthuc'=> $xacthuc]);
-    }
+
     public function successPage(){
         return view('frontend.checkout.success');
     }
