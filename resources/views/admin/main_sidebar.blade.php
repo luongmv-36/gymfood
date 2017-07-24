@@ -54,6 +54,20 @@
             </li>
             <li class="treeview">
                 <a href="#">
+                    <i class="fa fa-asterisk"></i>
+                    <span>Sales</span>
+            <span class="pull-right-container">
+              <span class="label label-primary pull-right">3</span>
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class=""><a href="{{route('admin.orders.list')}}"><i class="fa fa-heart-o"></i> Manage Orders</a></li>
+                    <li><a href="{{route('admin.category.list')}}"><i class="fa fa-heart-o"></i> Manage Invoice</a></li>
+                    <li><a href="{{route('admin.category.list')}}"><i class="fa fa-heart-o"></i> Manage Shipment</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
                     <i class="fa fa-pie-chart"></i>
                     <span>Charts</span>
             <span class="pull-right-container">

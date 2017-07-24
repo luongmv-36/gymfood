@@ -170,3 +170,15 @@ Route::get('admin/customer/list',[
     'as' => 'admin.customer',
     'uses'=> 'Admin\CustomerController@listCustomer'
 ]);
+
+//orders
+Route::get('admin/order/list',[
+    'as' => 'admin.orders.list',
+    'uses'=> 'Admin\OrdersController@listOrders'
+]);
+Route::get('admin/order/view/{id}',[
+    'as' => 'admin.orders.view',
+    'uses'=> 'Admin\OrdersController@view'
+]);
+
+
