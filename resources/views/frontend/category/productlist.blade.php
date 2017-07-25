@@ -15,32 +15,12 @@
                         <ul>
                             <li>
                                 <a href="#">
-                                    Men
+                                    Whey
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    Women
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Salon
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    New Trend
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Living room
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Bed room
+                                    Protein
                                 </a>
                             </li>
                         </ul>
@@ -143,7 +123,7 @@
                         </h3>
                 <span class="likebutton">
                   <a href="#">
-                    <img src="images/fblike.png" alt="">
+                    <img src="{{URL::to('/')}}/images/fblike.png" alt="">
                   </a>
                 </span>
                         <p>
@@ -186,16 +166,13 @@
                         <div class="fbplug">
                             <a href="#">
                     <span>
-                      <img src="images/fbicon.png" alt="">
+                      <img src="{{URL::to('/')}}/images/fbicon.png" alt="">
                     </span>
                                 Facebook social plugin
                             </a>
                         </div>
                     </div>
                     <div class="clearfix">
-                    </div>
-                    <div class="leftbanner">
-                        <img src="images/banner-small-01.png" alt="">
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -286,7 +263,7 @@
                                         {{$product->name}}
                                     </div>
                                     <p>
-                                        <img src="images/star.png" alt="">
+                                        <img src="{{URL::to('/')}}/images/star.png" alt="">
                                         <a href="#" class="review_num">
                                             02 Review(s)
                                         </a>

@@ -101,4 +101,5 @@
             @include('frontend.our_brand')
         </div>
     </div>
+    </div>
 @stop

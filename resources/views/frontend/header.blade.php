@@ -62,7 +62,7 @@
                             @foreach($category_menu as $item)
                             <li class=""><a href="{{route('category.productgird',['id'=>$item->id])}}">{{$item->name}}</a></li>
                             @endforeach
-                            <li><a href="contact.html">contact us</a></li>
+                            <li><a href="#">contact us</a></li>
                         </ul>
                     </div>
                 </div>

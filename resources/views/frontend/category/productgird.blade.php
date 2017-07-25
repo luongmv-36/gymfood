@@ -15,32 +15,12 @@
                         <ul>
                             <li>
                                 <a href="#">
-                                    Men
+                                    Vitamin
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    Women
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Salon
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    New Trend
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Living room
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    Bed room
+                                    WheyProtein
                                 </a>
                             </li>
                         </ul>
@@ -143,7 +123,7 @@
                         </h3>
                 <span class="likebutton">
                   <a href="#">
-                    <img src="images/fblike.png" alt="">
+                    <img src="{{URL::to('/')}}/images/fblike.png" alt="">
                   </a>
                 </span>
                         <p>
@@ -186,16 +166,13 @@
                         <div class="fbplug">
                             <a href="#">
                     <span>
-                      <img src="images/fbicon.png" alt="">
+                      <img src="{{URL::to('/')}}/images/fbicon.png" alt="">
                     </span>
                                 Facebook social plugin
                             </a>
                         </div>
                     </div>
                     <div class="clearfix">
-                    </div>
-                    <div class="leftbanner">
-                        <img src="images/banner-small-01.png" alt="">
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -291,7 +268,7 @@
                                         {{$product->name}}
                                     </div>
                                     <h4 class="price">
-                                        {{$product->price}}<small>vnđ</small>
+                                        {{$product->price}}.000<small>vnđ</small>
                                     </h4>
                                     <div class="button_group">
                                         <form action="{{route('cart.add')}}" method="post">

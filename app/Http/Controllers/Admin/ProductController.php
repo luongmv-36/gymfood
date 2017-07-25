@@ -84,8 +84,8 @@ class ProductController extends Controller
             $image_path = public_path().'/images/'.$image_path;
             $imagezoom_path = public_path().'/images/'.$imagezoom_path;
             $delete->delete();
-            \File::delete($image_path);
-            \File::delete($imagezoom_path);
+//            \File::delete($image_path);
+//            \File::delete($imagezoom_path);
             $del_file = " Đã xóa file $image_path and $imagezoom_path";
 
             return redirect()->back()->with('thongbao','Xóa thành công id : '.$id.$del_file);

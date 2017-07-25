@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 use App\CustomerAddress;
 class CustomerController extends Controller
 {
@@ -57,6 +58,7 @@ class CustomerController extends Controller
         $user->id_address = $id_address;
         $user->save();
         $a = $user->id;
+        Auth::login($user);
         return redirect()->back()->with('thanhcong','Đã tạo thành công id ='.$a.' và id address là '.$id_address);
     }
 
@@ -89,6 +91,8 @@ class CustomerController extends Controller
 
     public function logout(){
         Auth::logout();
+        Session::forget('cartItems');
+        Session::forget('grandTotal');
         return redirect()->route('home');
     }
 }

@@ -1,8 +1,8 @@
 <div class="clearfix">
 </div>
-<div class="page-index" style="background-color: #7E5D31">
-    <div class="container"">
-        <p>
+<div class="page-index" style="background-color:honeydew">
+    <div class="container">
+        <p style="color: black">
             Home - Products Details
         </p>
     </div>

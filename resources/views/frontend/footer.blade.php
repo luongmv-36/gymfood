@@ -3,13 +3,13 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <div class="footer-logo"><a href="#"><img src="images/logo.png" alt=""></a></div>
+                    <div class="footer-logo"><a href="#"><img src="{{URL::to('/')}}/images/logo.png" alt=""></a></div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <h4 class="title">Contact <strong>Info</strong></h4>
-                    <p>No. 08, Nguyen Trai, Hanoi , Vietnam</p>
+                    <p>No. 117, Cau Giay, Hanoi , Vietnam</p>
                     <p>Call Us : (084) 1900 1008</p>
-                    <p>Email : michael@leebros.us</p>
+                    <p>Email : maivanluong1@gmail.com</p>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <h4 class="title">Customer<strong> Support</strong></h4>
@@ -35,7 +35,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6">
-                    <p>Copyright © 2012. Designed by <a href="#">Michael Lee</a>. All rights reseved</p>
+                    <p>Copyright © 2017. Designed by <a href="#">Luong Mai Van</a>. All rights reseved</p>
                 </div>
                 <div class="col-md-6">
                     <ul class="social-icon">
