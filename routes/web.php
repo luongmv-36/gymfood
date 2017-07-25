@@ -114,47 +114,71 @@ Route::get('customer/logout',[
 //Auth::routes();
 //
 //Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('admin/index',[
-   'as' => 'dashboard',
-    'uses'=>'Admin\DashboardController@dashboard'
+Route::get('admin/login',[
+    'as' => 'admin.login',
+    'uses'=>'Admin\DashboardController@login'
 ]);
+Route::post('admin/login',[
+    'as' => 'admin.login',
+    'uses'=>'Admin\DashboardController@loginPost'
+]);
+Route::group(['middleware' => ['admin']],function (){
+    Route::get('admin/index',[
+        'as' => 'dashboard',
+        'uses'=>'Admin\DashboardController@dashboard'
+    ]);
 //category
-Route::get('admin/category/list',[
-    'as' => 'admin.category.list',
-    'uses'=>'Admin\CategoryController@listCategory'
-]);
-Route::get('admin/category/create/{id?}',[
-    'as' => 'admin.category.create',
-    'uses'=>'Admin\CategoryController@formCreate'
-]);
+    Route::get('admin/category/list',[
+        'as' => 'admin.category.list',
+        'uses'=>'Admin\CategoryController@listCategory'
+    ]);
+    Route::get('admin/category/create/{id?}',[
+        'as' => 'admin.category.create',
+        'uses'=>'Admin\CategoryController@formCreate'
+    ]);
 
-Route::post('admin/category/create',[
-    'as' => 'admin.category.postcreate',
-    'uses'=>'Admin\CategoryController@create'
-]);
+    Route::post('admin/category/create',[
+        'as' => 'admin.category.postcreate',
+        'uses'=>'Admin\CategoryController@create'
+    ]);
 
-Route::get('admin/category/delete/{id?}',[
-    'as' => 'admin.category.delete',
-    'uses'=>'Admin\CategoryController@delete'
-]);
+    Route::get('admin/category/delete/{id?}',[
+        'as' => 'admin.category.delete',
+        'uses'=>'Admin\CategoryController@delete'
+    ]);
 //product
-Route::get('admin/product/list',[
-    'as' => 'admin.product.list',
-    'uses'=>'Admin\ProductController@listProduct'
-]);
-Route::get('admin/product/create/{id?}',[
-    'as' => 'admin.product.create',
-    'uses'=>'Admin\ProductController@formCreate'
-]);
-Route::post('admin/product/create',[
-    'as' => 'admin.product.postcreate',
-    'uses'=>'Admin\ProductController@create'
-]);
-Route::get('admin/product/delete/{id?}',[
-    'as' => 'admin.product.delete',
-    'uses'=>'Admin\ProductController@delete'
-]);
+    Route::get('admin/product/list',[
+        'as' => 'admin.product.list',
+        'uses'=>'Admin\ProductController@listProduct'
+    ]);
+    Route::get('admin/product/create/{id?}',[
+        'as' => 'admin.product.create',
+        'uses'=>'Admin\ProductController@formCreate'
+    ]);
+    Route::post('admin/product/create',[
+        'as' => 'admin.product.postcreate',
+        'uses'=>'Admin\ProductController@create'
+    ]);
+    Route::get('admin/product/delete/{id?}',[
+        'as' => 'admin.product.delete',
+        'uses'=>'Admin\ProductController@delete'
+    ]);
+    //Customer
+    Route::get('admin/customer/list',[
+        'as' => 'admin.customer',
+        'uses'=> 'Admin\CustomerController@listCustomer'
+    ]);
+
+//orders
+    Route::get('admin/order/list',[
+        'as' => 'admin.orders.list',
+        'uses'=> 'Admin\OrdersController@listOrders'
+    ]);
+    Route::get('admin/order/view/{id}',[
+        'as' => 'admin.orders.view',
+        'uses'=> 'Admin\OrdersController@view'
+    ]);
+});
 
 //cart
 Route::post('cart/add/{type?}',[
@@ -165,20 +189,6 @@ Route::get('cart/remove/{id}',[
     'as'=> 'cart.remove',
     'uses'=> 'CartController@removeItem'
 ]);
-//Customer
-Route::get('admin/customer/list',[
-    'as' => 'admin.customer',
-    'uses'=> 'Admin\CustomerController@listCustomer'
-]);
 
-//orders
-Route::get('admin/order/list',[
-    'as' => 'admin.orders.list',
-    'uses'=> 'Admin\OrdersController@listOrders'
-]);
-Route::get('admin/order/view/{id}',[
-    'as' => 'admin.orders.view',
-    'uses'=> 'Admin\OrdersController@view'
-]);
 
 

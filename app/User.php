@@ -30,4 +30,12 @@ class User extends Authenticatable
     public function customerAddress(){
         $this->belongsTo('App\CustomerAddress','id_address','id');
     }
+    
+    public function isAdmin(){
+        if ($this->is_admin == 1){
+            return true;
+        }
+        return false;
+    }
+    
 }
