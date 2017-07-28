@@ -7,10 +7,12 @@ use App\Product;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Auth;
 use App\CustomerAddress;
+use App\Events\Event2;
 class CartController extends Controller
 {
     
     public function view(){
+
         return view('frontend.cart.view');
     }
 
@@ -26,6 +28,7 @@ class CartController extends Controller
     }
 
     public function addToCart(Request $request,$type = null){
+        //die();
         $id = (int)$request->input('product_id');
         $qty = (int)$request->input('qty');
         if ($qty == 0){
@@ -61,6 +64,7 @@ class CartController extends Controller
         }
 
       $this->setTotalCart();
+        event(new Event2(121212123));
       return redirect()->route('cart.view')->with('thongbao','Đã '.$thongbao.' thành công '.$product->name.' vào giỏi hàng');
 //        var_dump(Session::get('cartItems'));
 //        var_dump(Session::get('grandTotal'));
