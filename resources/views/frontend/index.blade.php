@@ -116,8 +116,14 @@
                 </div>
             </div>
             @include('frontend.our_brand')
-
             <div class="clearfix"></div>
+            <a id="show-message">Show popup again</a>
+            <div id="my-welcome-message">
+                <span>Demo Only (maivanluong1@gmail.com)</span>
+                <div class="img_popup">
+                    <a href="{{URL::to('/')}}"><img src="{{URL::to('images/pop_up.jpg')}}"></a>
+                </div>
+            </div>
     </div>
         </div>
 @stop
@@ -127,6 +133,13 @@
         jQuery(document).ready(function() {
             $('.flexslider').flexslider({
                 animation: "slide"
+            });
+        });
+
+        $(function () {
+            $('#my-welcome-message').firstVisitPopup({
+                cookieName : 'homepage',
+                showAgainSelector: '#show-message'
             });
         });
     </script>

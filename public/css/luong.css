@@ -2,3 +2,20 @@
     border: 0px;
 }
 
+#my-welcome-message {
+    display: none;
+    z-index: 500;
+    position: fixed;
+    width: 36%;
+    left: 30%;
+    top: 20%;
+    padding: 0px;
+    font-family: Calibri, Arial, sans-serif;
+    background: #FFF;
+}
+#fvpp-close {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    cursor: pointer;
+}
