@@ -1,5 +1,6 @@
+<div class="clearfix"></div>
 <div class="our-brand">
-    <h3 class="title"><strong>Our </strong> Brands</h3>
+    <h3 class="title"><strong>Hot </strong> Brands</h3>
     {{--<div class="control"><a id="prev_brand" class="prev" href="#">&lt;</a><a id="next_brand" class="next" href="#">&gt;</a></div>--}}
     <ul id="braldLogo">
         <li>
@@ -12,17 +13,17 @@
                 </li>
                 <li>
                     <a href="#">
-                        <div class="brand-logo"><img src="{{ URL::to('/')}}/images/themeforest.png" alt=""></div>
+                        <div class="brand-logo"><img src="{{ URL::to('/')}}/images/envato2.png" alt=""></div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <div class="brand-logo"><img src="{{ URL::to('/')}}/images/photodune.png" alt=""></div>
+                        <div class="brand-logo"><img src="{{ URL::to('/')}}/images/envato3.png" alt=""></div>
                     </a>
                 </li>
                 <li>
                     <a href="#">
-                        <div class="brand-logo"><img src="{{ URL::to('/')}}/images/activeden.png" alt=""></div>
+                        <div class="brand-logo"><img src="{{ URL::to('/')}}/images/envato2.png" alt=""></div>
                     </a>
                 </li>
                 <li>
