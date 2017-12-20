@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\User;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
@@ -75,7 +76,7 @@ class CustomerController extends Controller
                 'password'=> 'required|min:6|max:20'
             ],
             [
-            'email.required'=> 'Vui lòng nhập email',
+             'email.required'=> 'Vui lòng nhập email',
              'email.email' => 'Không đúng định dạng',
              'password.min' => 'Mật khẩu ít nhất 6 kí tự'
             ]
@@ -91,8 +92,17 @@ class CustomerController extends Controller
 
     public function profile($cusId){
         $cusId = (int)$cusId;
-        if (!isset($cusId)){
-            return redirect()->route('customer.login');
+        try {
+            $customer = User::findOrFail($cusId);
+            if ($customer->email){
+               $cus_address = $customer->customerAddress;
+                if ($cus_address->email){
+                    return view('customer.profile',compact('customer','cus_address'));
+                }
+
+            }
+        }catch (ModelNotFoundException $e){
+            return redirect()->route('customer.login')->with('thatbai','Tài Khoản Này Không Tồn Tại! Vui Lòng Đăng Nhập Tài Khoản Khác');
         }
     }
 

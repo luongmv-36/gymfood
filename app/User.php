@@ -28,7 +28,7 @@ class User extends Authenticatable
     ];
 
     public function customerAddress(){
-        $this->belongsTo('App\CustomerAddress','id_address','id');
+        return $this->belongsTo('App\CustomerAddress','id_address','id');
     }
     
     public function isAdmin(){
