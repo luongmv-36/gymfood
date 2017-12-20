@@ -86,7 +86,7 @@ Route::get('category/list/{id?}',[
     'uses'=> 'CategoryController@productlist'
 ]);
 
-//Customer
+//Customer**************************************************************//
 Route::get('customer/register',[
     'as' => 'customer.register',
     'uses' => 'CustomerController@form_register'
@@ -111,6 +111,11 @@ Route::get('customer/logout',[
     'as' => 'customer.logout',
     'uses' => 'CustomerController@logout'
 ]);
+
+Route::get('customer/profile/{id}',[
+    'as' => 'customer.view.profile',
+    'uses' => 'CustomerController@profile'
+]);
 //Auth::routes();
 //
 //Route::get('/home', 'HomeController@index')->name('home');
@@ -127,7 +132,7 @@ Route::group(['middleware' => ['admin']],function (){
         'as' => 'dashboard',
         'uses'=>'Admin\DashboardController@dashboard'
     ]);
-//category
+//category*******************************************************************//
     Route::get('admin/category/list',[
         'as' => 'admin.category.list',
         'uses'=>'Admin\CategoryController@listCategory'

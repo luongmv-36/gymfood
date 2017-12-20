@@ -14,8 +14,8 @@
                         <div class="col-md-3">
                             <ul class="usermenu">
                                 @if(Auth::check())
-                                    <li><a href="{{route('customer.login')}}" class="log">{{Auth::user()->name}}</a></li>
-                                    <li><a href="{{route('customer.logout')}}" class="reg">Logout</a></li>
+                                    <li><a href="{{route('customer.view.profile',['id'=> Auth::user()->id])}}" class="log">{{Auth::user()->name}}</a></li>
+                                    <li><a href="{{route('customer.logout')}}" class="reg logout" data-toggle="tooltip" data-placement="right" title="You Will Logout!">Logout</a></li>
                                 @else
                                  <li><a href="{{route('customer.login')}}" class="log">Login</a></li>
                                  <li><a href="{{route('customer.register')}}" class="reg">Register</a></li>
@@ -77,4 +77,12 @@
         height: 220px;
         max-width: 150px;
     }
+    .usermenu a.logout:hover{
+        text-decoration: underline;
+    }
 </style>
+<script>
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+    })
+</script>

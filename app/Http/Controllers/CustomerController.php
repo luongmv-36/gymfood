@@ -89,6 +89,13 @@ class CustomerController extends Controller
         }
     }
 
+    public function profile($cusId){
+        $cusId = (int)$cusId;
+        if (!isset($cusId)){
+            return redirect()->route('customer.login');
+        }
+    }
+
     public function logout(){
         Auth::logout();
         Session::forget('cartItems');
