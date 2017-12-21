@@ -6,6 +6,12 @@
     <div class="clearfix"></div>
     <div class="container_fullwidth">
         <div class="container">
+            @if(Session::has('thanhcong'))
+                <div class="alert alert-success">{{Session::get('thanhcong')}}</div>
+            @endif
+            @if(Session::has('thatbai'))
+                <div class="alert alert-danger">{{Session::get('thatbai')}}</div>
+            @endif
             <form class="form-horizontal" action="#">
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="email">Name:</label>
@@ -66,4 +72,7 @@
             </div>
         </div>
     </div>
+    <script>
+        $('.alert.alert-success').delay(3000).slideUp(200);
+    </script>
 @stop

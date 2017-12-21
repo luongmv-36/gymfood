@@ -84,7 +84,7 @@ class CustomerController extends Controller
 
         $data = array('email' => $email, 'password' => $password);
         if (Auth::attempt($data)){
-          return redirect()->back()->with('thanhcong','Đã đăng nhập thành công nhé');
+          return redirect()->route('customer.view.profile',['id'=> Auth::user()->id])->with('thanhcong','Đã đăng nhập thành công nhé');
         }else{
             return redirect()->back()->with('thatbai','Đăng nhập không thành công nhé');
         }

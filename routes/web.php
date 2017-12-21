@@ -86,7 +86,7 @@ Route::get('category/list/{id?}',[
     'uses'=> 'CategoryController@productlist'
 ]);
 
-//Customer**************************************************************//
+//Customer---------------------------------------------------------
 Route::get('customer/register',[
     'as' => 'customer.register',
     'uses' => 'CustomerController@form_register'
@@ -116,9 +116,21 @@ Route::get('customer/profile/{id}',[
     'as' => 'customer.view.profile',
     'uses' => 'CustomerController@profile'
 ]);
-//Auth::routes();
-//
-//Route::get('/home', 'HomeController@index')->name('home');
+
+//Seach--------------------------------------
+Route::post('search/{category?}',[
+    'as' => 'search',
+    'uses' => 'SearchController@search'
+]);
+Route::get('search/{category?}',[
+   'as' => 'search',
+  'uses' => 'SearchController@search'
+]);
+
+
+/**
+ * ***********ADMIN*************************************************************************************************************************************************************
+ */
 Route::get('admin/login',[
     'as' => 'admin.login',
     'uses'=>'Admin\DashboardController@login'
@@ -127,6 +139,7 @@ Route::post('admin/login',[
     'as' => 'admin.login',
     'uses'=>'Admin\DashboardController@loginPost'
 ]);
+
 Route::group(['middleware' => ['admin']],function (){
     Route::get('admin/index',[
         'as' => 'dashboard',
@@ -151,7 +164,7 @@ Route::group(['middleware' => ['admin']],function (){
         'as' => 'admin.category.delete',
         'uses'=>'Admin\CategoryController@delete'
     ]);
-//product
+//product***********************************************************
     Route::get('admin/product/list',[
         'as' => 'admin.product.list',
         'uses'=>'Admin\ProductController@listProduct'
@@ -174,7 +187,7 @@ Route::group(['middleware' => ['admin']],function (){
         'uses'=> 'Admin\CustomerController@listCustomer'
     ]);
 
-//orders
+//orders********************************************************
     Route::get('admin/order/list',[
         'as' => 'admin.orders.list',
         'uses'=> 'Admin\OrdersController@listOrders'
@@ -185,7 +198,7 @@ Route::group(['middleware' => ['admin']],function (){
     ]);
 });
 
-//cart
+//cart********************************************************
 Route::post('cart/add/{type?}',[
     'as' => 'cart.add',
     'uses' => 'CartController@addToCart'

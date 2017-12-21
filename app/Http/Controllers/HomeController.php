@@ -24,7 +24,7 @@ class HomeController extends Controller
     public function index()
     {
         $product1 = Product::all()->where('category_id',1)->take(4);
-        $product2 = Product::all()->where('category_id',2)->take(4);
+        $product2 = Product::all()->where('category_id',2)->sortByDesc('id')->take(4);
         return view('frontend.index',['product1'=>$product1,'product2'=>$product2]);
     }
 }

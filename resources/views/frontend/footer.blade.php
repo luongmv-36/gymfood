@@ -3,12 +3,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <div class="footer-logo"><a href="#"><img src="{{URL::to('/')}}/images/logo.png" alt=""></a></div>
+                    <div class="footer-logo"><a href="http://online.gov.vn/DocumentView.aspx" target="_blank"><img src="{{URL::to('/')}}/images/logo-bo-cong-thuong.png" alt="This is logo"></a></div>
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <h4 class="title">Contact <strong>Info</strong></h4>
                     <p>No. 117, Cau Giay, Hanoi , Vietnam</p>
-                    <p>Call Us : (084) 1900 1008</p>
+                    <p>Call Us : (+84)01635731092</p>
                     <p>Email : maivanluong1@gmail.com</p>
                 </div>
                 <div class="col-md-3 col-sm-6">
@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-md-3">
                     <h4 class="title">Get Our <strong>Newsletter </strong></h4>
-                    <p>Lorem ipsum dolor ipsum dolor.</p>
+                    <p>Nhận Thông Tin Khuyến Mại Ngay Nào.</p>
                     <form class="newsletter">
                         <input type="text" name="" placeholder="Type your email....">
                         <input type="submit" value="SignUp" class="button">

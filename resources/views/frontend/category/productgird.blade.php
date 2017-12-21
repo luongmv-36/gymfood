@@ -31,19 +31,21 @@
                         <h3 class="title">
                             Price
                         </h3>
-                        <form class="pricing">
+                        <form class="pricing" method="post" action="{{route('search',['category'=> $list_product->first()->category_id])}}">
+                            {{csrf_field()}}
                             <label>
                                 $
-                                <input type="number">
+                                <input type="number" name="fromPrice" class="" required/>
                             </label>
                   <span class="separate">
                     -
                   </span>
                             <label>
                                 $
-                                <input type="number">
+                                <input type="number" name="toPrice" required/>
+                                <input type="hidden" name="type" value="price"/>
                             </label>
-                            <input type="submit" value="Go">
+                            <input type="submit" value="Go" title="Search Now">
                         </form>
                     </div>
                     <div class="clearfix">
