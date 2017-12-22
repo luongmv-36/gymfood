@@ -5,7 +5,7 @@
     <meta name="description" content="Shop">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="{{ URL::to('/') }}/images/favicon.png">
-    <title>Welcome to FlatShop</title>
+    <title>GymFood Shop</title>
     <link href="{{ URL::to('/') }}/css/bootstrap.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100' rel='stylesheet' type='text/css'>
     <link href="{{ URL::to('/') }}/css/font-awesome.min.css" rel="stylesheet">

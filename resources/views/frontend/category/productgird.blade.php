@@ -192,6 +192,7 @@
                     <div class="clearfix">
                     </div>
                     <div class="products-grid">
+                        @if(!empty($list_product))
                         <div class="toolbar">
                             <div class="sorter">
                                 <div class="view-mode">
@@ -363,6 +364,9 @@
                         <div class="clearfix">
                         </div>
                     </div>
+                    @else
+                        <?php echo "Not Found Result"?>
+                    @endif
                 </div>
             </div>
             <div class="clearfix">

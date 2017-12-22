@@ -31,7 +31,10 @@
                         <h3 class="title">
                             Price
                         </h3>
-                        <form class="pricing" method="post" action="{{route('search',['category'=> $list_product->first()->category_id])}}">
+                        <?php
+                       $id = (!empty($list_product->first())) ? $list_product->first()->category_id : '';
+                        ?>
+                        <form class="pricing" method="post" action="{{route('search',['category'=> $id])}}">
                             {{csrf_field()}}
                             <label>
                                 $
@@ -198,7 +201,10 @@
                                     <a href="#" class="list active">
                                         List
                                     </a>
-                                    <a href="{{route('category.productgird',['id'=>$list_product->first()->category_id])}}" class="grid">
+                                    <?php
+                                        $id = (!empty($list_product->first())) ? $list_product->first()->category_id : '';
+                                     ?>
+                                    <a href="{{route('category.productgird',['id' => $id] )}}" class="grid">
                                         Grid
                                     </a>
                                 </div>
@@ -252,6 +258,7 @@
                             </div>
                         </div>
                         <ul class="products-listItem">
+                            @if(($list_product->count() > 0))
                             @foreach($list_product as $product)
                             <li class="products">
                                 <div class="offer">
@@ -305,6 +312,9 @@
                                 </div>
                             </li>
                           @endforeach
+                                @else
+                                <div class="alert alert-warning">Not Found Result</div>
+                                @endif
                         </ul>
                         <div class="toolbar">
                             <div class="sorter bottom">
