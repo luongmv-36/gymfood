@@ -7,6 +7,9 @@
     <div class="container_fullwidth">
         <div class="container">
                     <div class="products-details">
+                        @if(Session::has('thongbao'))
+                            <div class="alert alert-success">{{Session::get('thongbao')}}</div>
+                         @endif
                         <div class="preview_image">
                             <div class="preview-small">
                                 <img width="100%" height="100%" id="zoom_01" src='{{ URL::to('images').'/'.$product->images}}' data-zoom-image="{{ URL::to('images').'/'.$product->images_zoom}}"/>
@@ -92,7 +95,7 @@
                             <div class="tab">
                                 <div class="container" style="padding-left: 0px">
                                 <button class="tablinks" onclick="openCity(event, 'Descraption')" id="defaultOpen">DESCRIPTION</button>
-                                <button class="tablinks" onclick="openCity(event, 'Reviews')">REVIEW</button>
+                                <button class="tablinks" onclick="openCity(event, 'Reviews')">COMMENT</button>
                                 <button class="tablinks" onclick="openCity(event, 'Tags')">PRODUCT TAGS</button>
                                     </div>
                             </div>
@@ -102,7 +105,8 @@
                         </div>
 
                         <div id="Reviews" class="tabcontent">
-                            <form>
+                            <form method="post" action="{{route('comment.add')}}">
+                                {{csrf_field()}}
                                 <table>
                                     <thead>
                                     <tr>
@@ -110,19 +114,28 @@
                                             &nbsp;
                                         </th>
                                         <th>
-                                            1 star
+                                            <i class="fa fa-star light-red"/>
                                         </th>
                                         <th>
-                                            2 stars
+                                            <i class="fa fa-star light-red"/> <i class="fa fa-star light-red"/>
                                         </th>
                                         <th>
-                                            3 stars
+                                            <i class="fa fa-star light-red"/>
+                                            <i class="fa fa-star light-red"/>
+                                            <i class="fa fa-star light-red"/>
                                         </th>
                                         <th>
-                                            4 stars
+                                            <i class="fa fa-star light-red"/>
+                                            <i class="fa fa-star light-red"/>
+                                            <i class="fa fa-star light-red"/>
+                                            <i class="fa fa-star light-red"/>
                                         </th>
                                         <th>
-                                            5 stars
+                                            <i class="fa fa-star light-red"/>
+                                            <i class="fa fa-star light-red"/>
+                                            <i class="fa fa-star light-red"/>
+                                            <i class="fa fa-star light-red"/>
+                                            <i class="fa fa-star light-red"/>
                                         </th>
                                     </tr>
                                     </thead>
@@ -132,59 +145,19 @@
                                             Quality
                                         </td>
                                         <td>
-                                            <input type="radio" name="quality" value="Blue"/>
+                                            <input type="radio" name="vote" value="1" required/>
                                         </td>
                                         <td>
-                                            <input type="radio" name="quality" value="">
+                                            <input type="radio" name="vote" value="2" required/>
                                         </td>
                                         <td>
-                                            <input type="radio" name="quality" value="">
+                                            <input type="radio" name="vote" value="3" required/>
                                         </td>
                                         <td>
-                                            <input type="radio" name="quality" value="">
+                                            <input type="radio" name="vote" value="4" required/>
                                         </td>
                                         <td>
-                                            <input type="radio" name="quality" value="">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Price
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="price" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="price" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="price" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="price" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="price" value="">
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>
-                                            Value
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="value" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="value" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="value" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="value" value="">
-                                        </td>
-                                        <td>
-                                            <input type="radio" name="value" value="">
+                                            <input type="radio" name="vote" value="5" required checked/>
                                         </td>
                                     </tr>
                                     </tbody>
@@ -198,7 +171,7 @@
                                                     *
                                                 </strong>
                                             </label>
-                                            <input type="text" name="" class="input namefild">
+                                            <input type="text" name="name" class="input namefild" value="<?php echo (Auth::check()) ? Auth::user()->name: '' ?>" required>
                                         </div>
                                         <div class="form-row">
                                             <label class="lebel-abs">
@@ -207,29 +180,21 @@
                                                     *
                                                 </strong>
                                             </label>
-                                            <input type="email" name="" class="input emailfild">
-                                        </div>
-                                        <div class="form-row">
-                                            <label class="lebel-abs">
-                                                Summary of You Review
-                                                <strong class="red">
-                                                    *
-                                                </strong>
-                                            </label>
-                                            <input type="text" name="" class="input summeryfild">
+                                            <input type="email" name="email" class="input emailfild" value="<?php echo (Auth::check()) ? Auth::user()->email: '' ?>" required>
                                         </div>
                                     </div>
                                     <div class="col-md-6 col-sm-6">
                                         <div class="form-row">
                                             <label class="lebel-abs">
-                                                Your Name
+                                                Your Comment
                                                 <strong class="red">
                                                     *
                                                 </strong>
                                             </label>
-                            <textarea class="input textareafild" name="" rows="7" >
+                            <textarea class="input textareafild" name="comment" rows="3" required>
                             </textarea>
                                         </div>
+                                        <input type="hidden" name="productId" value="{{$product->id}}">
                                         <div class="form-row">
                                             <input type="submit" value="Submit" class="button">
                                         </div>
@@ -242,52 +207,38 @@
                             <p>Tag Content</p>
                         </div>
                         <div class="tab-content" >
-                            <div class="review">
-                                <p class="rating">
-                                    <i class="fa fa-star light-red">
-                                    </i>
-                                    <i class="fa fa-star light-red">
-                                    </i>
-                                    <i class="fa fa-star light-red">
-                                    </i>
-                                    <i class="fa fa-star-half-o gray">
-                                    </i>
-                                    <i class="fa fa-star-o gray">
-                                    </i>
-                                </p>
-                                <h5 class="reviewer">
-                                    Reviewer name
-                                </h5>
-                                <p class="review-date">
-                                    Date: 01-01-2014
-                                </p>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a eros neque. In sapien est, malesuada non interdum id, cursus vel neque.
-                                </p>
-                            </div>
-                            <div class="review">
-                                <p class="rating">
-                                    <i class="fa fa-star light-red">
-                                    </i>
-                                    <i class="fa fa-star light-red">
-                                    </i>
-                                    <i class="fa fa-star light-red">
-                                    </i>
-                                    <i class="fa fa-star-half-o gray">
-                                    </i>
-                                    <i class="fa fa-star-o gray">
-                                    </i>
-                                </p>
-                                <h5 class="reviewer">
-                                    Reviewer name
-                                </h5>
-                                <p class="review-date">
-                                    Date: 01-01-2014
-                                </p>
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer a eros neque. In sapien est, malesuada non interdum id, cursus vel neque.
-                                </p>
-                            </div>
+                            @foreach($commentProduct as $cm)
+                                <div class="review">
+                                    <div class="pull-left">
+                                        <img src="{{URL::to('images')}}/message.png" class="img-circle" alt="User Image">
+                                    </div>
+                                    <?php
+                                       $rate = (int)$cm->vote;
+                                        if($rate > 5 || $rate <= 0) $rate = 5;
+                                       $no_rate = 5 - $rate;
+                                     ?>
+                                    <p class="rating">
+                                        @for($i = 1 ; $i <= $rate; $i++)
+                                            <i class="fa fa-star light-red"></i>
+                                        @endfor
+                                        @for($i = 1 ;$i <= $no_rate; $i++)
+                                            <i class="fa fa-star-o gray"></i>
+                                        @endfor
+                                    </p>
+                                    <h5 class="reviewer">
+                                        {{$cm->name}}
+                                    </h5>
+                                    <p class="review-date">
+                                       <?php
+                                            $created_at = Carbon\Carbon::parse($cm->created_at);
+                                            echo $created_at->format('d-m-Y');
+                                       ?>
+                                    </p>
+                                    <p>
+                                       {{$cm->description}}
+                                    </p>
+                                </div>
+                            @endforeach
                         </div>
 
                     </div>

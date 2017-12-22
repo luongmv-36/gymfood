@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
+use Illuminate\Support\Facades\DB;
+
 class ProductController extends Controller
 {
     
@@ -13,6 +15,10 @@ class ProductController extends Controller
         if (!$product){
             $product = null;
         }
-        return view('frontend.product.view',compact('product'));
+        //get Comment
+        $commentProduct = DB::table('comment')
+                                ->where('product_id',$id)
+                                ->get();
+        return view('frontend.product.view',compact('product','commentProduct'));
     }
 }

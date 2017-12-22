@@ -12,7 +12,8 @@ class CartController extends Controller
 {
     
     public function view(){
-
+        $cart = Session::get('cartItems');
+        if (count($cart) <= 0) return redirect()->route('home');
         return view('frontend.cart.view');
     }
 

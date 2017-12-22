@@ -12,17 +12,15 @@
                         <h3 class="title">
                             Categories
                         </h3>
+                        <?php $category_all = App\Category::all()->where('active','1');?>
                         <ul>
-                            <li>
-                                <a href="#">
-                                    Vitamin
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    WheyProtein
-                                </a>
-                            </li>
+                            @foreach($category_all as $item)
+                                <li>
+                                    <a href="#">
+                                       {{$item->name}}
+                                    </a>
+                                </li>
+                             @endforeach
                         </ul>
                     </div>
                     <div class="clearfix">

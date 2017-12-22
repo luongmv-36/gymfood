@@ -73,6 +73,6 @@
         </div>
     </div>
     <script>
-        $('.alert.alert-success').delay(3000).slideUp(200);
+
     </script>
 @stop

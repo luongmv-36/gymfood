@@ -54,3 +54,6 @@
         padding-bottom: 0px;
     }
 </style>
+<script>
+    $('.alert.alert-success').delay(3000).slideUp(200);
+</script>

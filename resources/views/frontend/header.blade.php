@@ -33,14 +33,14 @@
                         <li class="option-cart">
                             <a href="#" class="cart-icon">cart <span class="cart_no">{{count(Session::get('cartItems'))}}</span></a>
                             <ul class="option-cart-item">
-                                @if(Session::has('cartItems'))
+                                @if(Session::has('cartItems') && count(Session::get('cartItems')) > 0 )
                                     @foreach(Session::get('cartItems') as $item)
                                 <li>
                                     <div class="cart-item">
                                         <div class="image"><img src="{{URL::to('images').'/'.$item['images']}}" alt=""></div>
                                         <div class="item-description">
                                             <p class="name">{{$item['name']}}</p>
-                                            <p>Size: <span class="light-red">One size</span><br>Quantity: <span class="light-red">{{$item['qty']}}</span></p>
+                                            <p>Price: <span class="light-red">{{$item['price']}}<small>vnđ</small></span><br>Quantity: <span class="light-red">{{$item['qty']}}</span></p>
                                         </div>
                                         <div class="right">
                                             <p class="price">{{$item['price']}}<small>vnđ</small></p>
@@ -49,9 +49,9 @@
                                     </div>
                                 </li>
                                     @endforeach
-                                <li><span class="total">Total <strong>{{Session::get('grandTotal')}}</strong></span><button class="checkout" onClick="location.href='{{route('cart.view')}}'">CheckOut</button></li>
+                                <li><span class="total">Total <strong>{{Session::get('grandTotal')}}</strong><small>vnđ</small></span><button class="checkout" onClick="location.href='{{route('cart.view')}}'">CheckOut</button></li>
                                 @else
-                                    <li>Empty</li>
+                                    <li><span>Empty Cart</span></li>
                                 @endif
                             </ul>
                         </li>
@@ -85,4 +85,5 @@
     $(document).ready(function () {
         $('[data-toggle="tooltip"]').tooltip();
     })
+
 </script>
