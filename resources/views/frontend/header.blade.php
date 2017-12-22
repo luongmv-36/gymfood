@@ -28,7 +28,7 @@
                 <div class="header_bottom navbar-fixed-top">
                     <ul class="option">
                         <li id="search" class="search">
-                            <form><input class="search-submit" type="submit" value=""><input class="search-input" placeholder="Enter your search term..." type="text" value="" name="search"></form>
+                            <form method="post" action="{{route('search')}}"><input class="search-submit" type="submit" value=""><input class="search-input" placeholder="Enter your search term..." type="text" value="" name="search"><input type="hidden" name="type" value="default"/>{{csrf_field()}}</form>
                         </li>
                         <li class="option-cart">
                             <a href="#" class="cart-icon">cart <span class="cart_no">{{count(Session::get('cartItems'))}}</span></a>

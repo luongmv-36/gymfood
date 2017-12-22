@@ -29,6 +29,10 @@ class SearchController extends Controller
                                     ->whereBetween('price',[$post['fromPrice'], $post['toPrice']])
                                     ->get();
 
+          }elseif ($post['type'] == 'default'){
+              $list_product = DB::table('products')
+                                    ->where('name', 'LIKE','%' . $post['search'] . '%')
+                                    ->get();
           }
        
        return view('frontend.category.productlist',compact('list_product'));
