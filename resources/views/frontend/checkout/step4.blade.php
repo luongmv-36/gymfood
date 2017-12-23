@@ -16,17 +16,17 @@
                             </a>
                         </li>
                         <li class="steps">
-                            <a href="checkout2.html" class="step-title">
+                            <a href="{{route('checkout.cart')}}" class="step-title">
                                 02. Address information
                             </a>
                         </li>
                         <li class="steps active">
-                            <a href="checkout2.html" class="step-title">
+                            <a href="{{route('checkout.cart')}}" class="step-title">
                                 03. Shipping And Payment
                             </a>
                         </li>
                         <li class="steps">
-                            <a href="#" class="step-title">
+                            <a href="" class="step-title" style="color: red">
                                 04. oder review
                             </a>
                             <div class="step-description">

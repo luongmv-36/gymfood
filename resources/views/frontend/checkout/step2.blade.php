@@ -18,7 +18,7 @@
                             </a>
                         </li>
                         <li class="steps active">
-                            <a href="checkout2.html" class="step-title">
+                            <a href="{{route('checkout.step2')}}" class="step-title" style="color: red">
                                 02. Address information
                             </a>
                             <div class="step-description">
@@ -37,7 +37,7 @@
                                                                 *
                                                             </strong>
                                                         </label>
-                                                        <input type="text" class="input namefild" name="name" value="<?php echo ($user)?$user->name:''?>">
+                                                        <input type="text" class="input namefild" name="name" value="<?php echo ($user)?$user->name:''?>" required>
                                                     </div>
                                                 <div class="form-row">
                                                     <label class="lebel-abs">
@@ -46,7 +46,7 @@
                                                             *
                                                         </strong>
                                                     </label>
-                                                    <input type="text" class="input namefild" name="email" value="<?php echo ($user)?$user->email:''?>">
+                                                    <input type="email" class="input namefild" name="email" value="<?php echo ($user)?$user->email:''?>" required>
                                                 </div>
                                                 <div class="form-row">
                                                     <label class="lebel-abs">
@@ -55,7 +55,7 @@
                                                             *
                                                         </strong>
                                                     </label>
-                                                    <input type="text" class="input namefild" name="phone" value="<?php echo ($c_address)?$c_address->phone:''?>">
+                                                    <input type="text" class="input namefild" name="phone" value="<?php echo ($c_address)?$c_address->phone:''?>" required>
                                                 </div>
                                             </div>
                                         </div>
@@ -71,7 +71,7 @@
                                                             *
                                                         </strong>
                                                     </label>
-                                                    <input type="text" class="input namefild" name="address1" value="<?php echo ($c_address)?$c_address->address1:''?>">
+                                                    <input type="text" class="input namefild" name="address1" value="<?php echo ($c_address)?$c_address->address1:''?>" required>
                                                 </div>
                                                 <div class="form-row">
                                                     <label class="lebel-abs">
@@ -86,7 +86,7 @@
                                                             *
                                                         </strong>
                                                     </label>
-                                                    <input type="text" class="input namefild" name="city" value="<?php echo ($c_address)?$c_address->city:''?>">
+                                                    <input type="text" class="input namefild" name="city" value="<?php echo ($c_address)?$c_address->city:''?>" required>
                                                 </div>
                                                 <div class="form-row">
                                                     <label class="lebel-abs">
@@ -95,7 +95,7 @@
                                                             *
                                                         </strong>
                                                     </label>
-                                                    <input type="text" class="input namefild" name="passcode" value="<?php echo ($c_address)?$c_address->passcode:''?>">
+                                                    <input type="text" class="input namefild" name="passcode" value="<?php echo ($c_address)?$c_address->passcode:''?>" required>
                                                 </div>
                                                 <div class="form-row">
                                                     <label class="lebel-abs">
@@ -104,7 +104,7 @@
                                                             *
                                                         </strong>
                                                     </label>
-                                                    <input type="text" class="input namefild" name="country" value="<?php echo ($c_address)?$c_address->country:''?>">
+                                                    <input type="text" class="input namefild" name="country" value="<?php echo ($c_address)?$c_address->country:''?>" required>
                                                 </div>
                                                 <div class="form-row">
                                                     <label class="lebel-abs">
@@ -133,12 +133,12 @@
                             </div>
                         </li>
                         <li class="steps">
-                            <a href="#" class="step-title">
+                            <a href="" class="step-title">
                                 03. Shipping and Payment
                             </a>
                         </li>
                         <li class="steps">
-                            <a href="#" class="step-title">
+                            <a href="" class="step-title">
                                 04. oder review
                             </a>
                         </li>

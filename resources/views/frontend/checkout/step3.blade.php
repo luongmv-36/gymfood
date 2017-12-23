@@ -16,12 +16,12 @@
                             </a>
                         </li>
                         <li class="steps">
-                            <a href="checkout2.html" class="step-title">
+                            <a href="{{route('checkout.cart')}}" class="step-title">
                                 02. Address information
                             </a>
                         </li>
                         <li class="steps active">
-                            <a href="checkout2.html" class="step-title">
+                            <a href="" class="step-title" style="color: red">
                                 03. Shipping And Payment
                             </a>
                             <div class="step-description">
@@ -33,7 +33,7 @@
                                                 </h5>
                                                 <label>
                               <span class="input-radio">
-                                <input type="radio" name="shipping_method" value="ship1">
+                                <input type="radio" name="shipping_method" value="ship1" required>
                               </span>
                               <span class="text">
                                 Shipping 1
@@ -58,7 +58,7 @@
 
                                                 <label>
                               <span class="input-radio">
-                                <input type="radio" name="payment_method" value="payment1">
+                                <input type="radio" name="payment_method" value="payment1" required>
                               </span>
                               <span class="text">
                                 Shipping 1
@@ -86,7 +86,7 @@
                                     </div>
                         </li>
                         <li class="steps">
-                            <a href="#" class="step-title">
+                            <a href="" class="step-title">
                                 04. oder review
                             </a>
                         </li>

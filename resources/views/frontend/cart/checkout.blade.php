@@ -11,7 +11,7 @@
                 <div class="checkout-page">
                     <ol class="checkout-steps">
                         <li class="steps active">
-                            <a href="{{route('checkout.cart')}}" class="step-title">
+                            <a href="{{route('checkout.cart')}}" class="step-title" style="color: red">
                                 01. checkout opition
                             </a>
                             <div class="step-description">
@@ -62,7 +62,7 @@
                                                             *
                                                         </strong>
                                                     </label>
-                                                    <input type="text" class="input namefild" name="email">
+                                                    <input type="text" class="input namefild" name="email" required>
                                                 </div>
                                                 <div class="form-row">
                                                     <label class="lebel-abs">
@@ -71,13 +71,14 @@
                                                             *
                                                         </strong>
                                                     </label>
-                                                    <input type="text" class="input namefild" name="password">
+                                                    <input type="text" class="input namefild" name="password" required>
                                                 </div>
                                                 <p class="forgoten">
                                                     <a href="#">
                                                         Forgoten your password?
                                                     </a>
                                                 </p>
+                                                <input type="hidden" name="in_checkout" value="1"/>
                                                 <button>
                                                     Login
                                                 </button>
@@ -88,17 +89,17 @@
                             </div>
                         </li>
                         <li class="steps">
-                            <a href="checkout2.html" class="step-title">
+                            <a href="" class="step-title">
                                 02. Address information
                             </a>
                         </li>
                         <li class="steps">
-                            <a href="checkout2.html" class="step-title">
+                            <a href="" class="step-title">
                                 03. Shipping and Payment
                             </a>
                         </li>
                         <li class="steps">
-                            <a href="#" class="step-title">
+                            <a href="" class="step-title">
                                 04. oder review
                             </a>
                         </li>

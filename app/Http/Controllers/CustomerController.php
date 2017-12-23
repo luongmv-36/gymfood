@@ -60,7 +60,7 @@ class CustomerController extends Controller
         $user->save();
         $a = $user->id;
         Auth::login($user);
-        return redirect()->back()->with('thanhcong','Đã tạo thành công id ='.$a.' và id address là '.$id_address);
+        return redirect()->route('customer.view.profile',['id' => $a])->with('thanhcong','Đã tạo thành công id ='.$a.' và id address là '.$id_address);
     }
 
     public function form_login(){
@@ -83,8 +83,10 @@ class CustomerController extends Controller
         );
 
         $data = array('email' => $email, 'password' => $password);
-        if (Auth::attempt($data)){
-          return redirect()->route('customer.view.profile',['id'=> Auth::user()->id])->with('thanhcong','Đã đăng nhập thành công nhé');
+        if (Auth::attempt($data) && $request->in_checkout == 1){
+          return redirect()->route('checkout.cart')->with('thanhcong','Đã đăng nhập thành công nhé');
+        }elseif (Auth::attempt($data)) {
+            return redirect()->route('customer.view.profile', ['id' => Auth::user()->id])->with('thanhcong', 'Đã đăng nhập thành công nhé');
         }else{
             return redirect()->back()->with('thatbai','Đăng nhập không thành công nhé');
         }
