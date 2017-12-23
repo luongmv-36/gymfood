@@ -119,7 +119,6 @@
             <div class="clearfix"></div>
             <a id="show-message">Show popup again</a>
             <div id="my-welcome-message">
-                <span>Demo Only (maivanluong1@gmail.com)</span>
                 <div class="img_popup">
                     <a href="{{URL::to('/')}}"><img src="{{URL::to('images/pop_up.jpg')}}"></a>
                 </div>

@@ -22,7 +22,7 @@
                             <p>
                                 <img alt="" src="{{ URL::to('/')}}/images/star.png">
                                 <a class="review_num" href="#">
-                                    02 Review(s)
+                                    {{count($commentProduct)}} Review(s)
                                 </a>
                             </p>
                             <p>
@@ -44,7 +44,7 @@
                       </sup>
                     </span>
                     <span class="old_price">
-                      0.000
+                      {{$product->price + $product->price * 0.14}}
                       <sup>
                         vnđ
                       </sup>
