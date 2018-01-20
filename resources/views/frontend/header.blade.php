@@ -4,7 +4,7 @@
         <?php $category_menu = App\Category::all()->where('active',1);?>
         <div class="row">
             <div class="col-md-2 col-sm-2">
-                <div class="logo"><a href="{{route('home')}}"><img src="{{URL::to('/')}}/images/logo-GNC.png" alt="FlatShop"></a></div>
+                <div class="logo"><a href="{{route('home')}}"><img src="{{URL::to('/')}}/images/logo-luong.png" alt="FlatShop"></a></div>
             </div>
             <div class="col-md-10 col-sm-10">
                 <div class="header_top">

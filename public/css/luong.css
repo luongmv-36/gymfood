@@ -19,3 +19,11 @@
     right: 0px;
     cursor: pointer;
 }
+.flex-control-nav{
+    margin-top: 5px;
+}
+
+#home_product{
+    display:none;
+
+}

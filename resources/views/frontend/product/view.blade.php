@@ -12,7 +12,7 @@
                          @endif
                         <div class="preview_image">
                             <div class="preview-small">
-                                <img width="100%" height="100%" id="zoom_01" src='{{ URL::to('images').'/'.$product->images}}' data-zoom-image="{{ URL::to('images').'/'.$product->images_zoom}}"/>
+                                <img width="100%" height="100%" id="zoom_01" src='{{ URL::to('images').'/'.$product->images_zoom}}' data-zoom-image="{{ URL::to('images').'/'.$product->images_zoom}}"/>
                             </div>
                         </div>
                         <div class="products-description">

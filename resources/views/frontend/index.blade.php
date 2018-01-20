@@ -19,7 +19,7 @@
                                     <div class="productname">{{$p->name}}</div>
                                     <h4 class="price">{{$p->price}}.000 vnđ</h4>
                                     <div class="dc_h_sale" style="color: #347e0c;font-weight: bold; margin: 3px 0 6px 0;text-align: center"><img src="{{URL::to('images/thuong_icon.jpg')}}" style="display: inline;"> Có tặng thêm quà</div>
-                                    <div class="button_group">
+                                    <div class="button_group" id="home_product">
                                         <form action="{{route('cart.add')}}" method="post">
                                             {{csrf_field()}}
                                             <input type="hidden" value="{{$p->id}}" name="product_id">
@@ -57,7 +57,7 @@
                                     <div class="productname">{{$p->name}}</div>
                                     <h4 class="price">{{$p->price}}.000 vnđ</h4>
                                     <div class="dc_h_sale" style="color: #347e0c;font-weight: bold; margin: 3px 0 6px 0;text-align: center"><img src="{{URL::to('images/thuong_icon.jpg')}}" style="display: inline;"> Có tặng thêm quà</div>
-                                    <div class="button_group">
+                                    <div class="button_group" id="home_product">
                                         <form action="{{route('cart.add')}}" method="post">
                                             {{csrf_field()}}
                                             <input type="hidden" value="{{$p->id}}" name="product_id">
