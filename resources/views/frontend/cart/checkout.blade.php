@@ -1,6 +1,14 @@
 @extends('frontend.master')
 @section('breadcrumbs')
-    @include('frontend.breadcrumbs')
+    <div class="clearfix">
+    </div>
+    <div class="page-index" style="background-color:lightgrey">
+        <div class="container">
+            <p style="color: black">
+                Home - Check Out
+            </p>
+        </div>
+    </div>
 @stop
 @section('content')
     <div class="clearfix"></div>

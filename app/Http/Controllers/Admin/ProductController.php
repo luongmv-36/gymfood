@@ -25,7 +25,6 @@ class ProductController extends Controller
 
     public function create(Request $request){
         $product = new Product;
-
         //Case edit
         $check_id = $request->has('id');
         if ($check_id){

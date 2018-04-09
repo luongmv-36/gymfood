@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-md-3">
                     <h4 class="title">Get Our <strong>Newsletter </strong></h4>
-                    <p>Nhận Thông Tin Khuyến Mại Ngay Nào.</p>
+                    <p>Get Promotion Information Now</p>
                     <form class="newsletter">
                         <input type="text" name="" placeholder="Type your email....">
                         <input type="submit" value="SignUp" class="button">
