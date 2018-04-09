@@ -17,7 +17,7 @@
                                     <div class="offer">- %50</div>
                                     <div class="thumbnail"><a href="{{route('product.view',['id'=> $p->id, 'slug'=> 'test'])}}"><img src="{{URL::to('images').'/'.$p->images}}" alt="{{$p->name}}"></a></div>
                                     <div class="productname">{{$p->name}}</div>
-                                    <h4 class="price">{{$p->price}}.000 vnđ</h4>
+                                    <h4 class="price">{{$p->price}} USD</h4>
                                     <div class="dc_h_sale" style="color: #347e0c;font-weight: bold; margin: 3px 0 6px 0;text-align: center"><img src="{{URL::to('images/thuong_icon.jpg')}}" style="display: inline;"> Có tặng thêm quà</div>
                                     <div class="button_group" id="home_product">
                                         <form action="{{route('cart.add')}}" method="post">
