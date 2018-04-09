@@ -35,6 +35,7 @@
                                 <div class="alert alert-warning">{{$messages}}</div>
                             @endif
                             <form id="login-form" action="{{route('admin.login')}}" method="post" role="form" style="display: block;">
+                                {{csrf_field()}}
                                 <div class="form-group">
                                     <input type="text" name="email" id="email" tabindex="1" class="form-control" placeholder="Email" value="" required>
                                 </div>
@@ -193,5 +194,7 @@
         });
 
     });
-
+    $(document).ready(function () {
+        alert("Demo : luongmv@yahoo.com / 12345678")
+    })
 </script>
