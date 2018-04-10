@@ -95,6 +95,9 @@ class CustomerController extends Controller
     public function profile($cusId){
         $cusId = (int)$cusId;
         try {
+            if (!Auth::check() || Auth::user()->id != $cusId){
+                return view('customer.profile');
+            }
             $customer = User::findOrFail($cusId);
             if ($customer->email){
                $cus_address = $customer->customerAddress;

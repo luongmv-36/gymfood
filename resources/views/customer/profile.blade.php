@@ -1,6 +1,12 @@
 @extends('frontend.master')
 @section('breadcrumbs')
-    @include('frontend.breadcrumbs')
+    <div class="page-index" style="background-color:lightgrey">
+        <div class="container">
+            <p style="color: black">
+                Home - Profile
+            </p>
+        </div>
+    </div>
 @stop
 @section('content')
     <div class="clearfix"></div>
@@ -12,6 +18,7 @@
             @if(Session::has('thatbai'))
                 <div class="alert alert-danger">{{Session::get('thatbai')}}</div>
             @endif
+                @if(!empty($customer))
             <form class="form-horizontal" action="#">
                 <div class="form-group">
                     <label class="control-label col-sm-2" for="email">Name:</label>
@@ -68,6 +75,7 @@
                     </div>
                 </div>
             </form>
+                @endif
                 @include('frontend.our_brand')
             </div>
         </div>
