@@ -1,6 +1,12 @@
 @extends('frontend.master')
 @section('breadcrumbs')
-    @include('frontend.breadcrumbs')
+    <div class="page-index" style="background-color:lightgrey">
+        <div class="container">
+            <p style="color: black">
+                Home - Register
+            </p>
+        </div>
+    </div>
 @stop
 @section('content')
     <div class="clearfix"></div>
@@ -119,7 +125,7 @@
                                                 </div>
                                                 <div class="form-row">
                                                     <label class="lebel-abs">
-                                                        Pass Code
+                                                        Post Code
                                                     </label>
                                                     <input type="text" class="input namefild" name="passcode">
                                                 </div>

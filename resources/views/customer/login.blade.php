@@ -1,6 +1,8 @@
 @extends('frontend.master')
 @section('breadcrumbs')
-    @include('frontend.breadcrumbs')
+    <div class="clearfix">
+    </div>
+
 @stop
 @section('content')
     <div class="clearfix"></div>
@@ -12,7 +14,7 @@
                     <ol class="checkout-steps">
                         <li class="steps active">
                             <a href="{{route('checkout.cart')}}" class="step-title">
-                                01. checkout opition
+                                Customer Login
                             </a>
                             <div class="step-description">
                                 <div class="row">
@@ -71,14 +73,15 @@
                                                     </label>
                                                     <input type="text" class="input namefild" name="password">
                                                 </div>
+                                                <button>
+                                                    Login
+                                                </button>
                                                 <p class="forgoten">
                                                     <a href="#">
                                                         Forgoten your password?
                                                     </a>
                                                 </p>
-                                                <button>
-                                                    Login
-                                                </button>
+
                                             </form>
                                         </div>
                                     </div>

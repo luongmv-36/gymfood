@@ -19,24 +19,24 @@ class CustomerController extends Controller
         $data = $request->input();
         $this->validate($request,
             [
-                'email' =>'required|email|unique:users,email',
-                'password'=>'required|min:6|max:20',
-                'first_name' => 'required',
-                'cpassword'=>'required|same:password',
-                'phone'=>'required',
-                'address1' => 'required',
-                'country' => 'required'
+                'email'     =>'required|email|unique:users,email',
+                'password'  =>'required|min:6|max:20',
+                'first_name'=> 'required',
+                'cpassword' =>'required|same:password',
+                'phone'     =>'required',
+                'address1'  => 'required',
+                'country'   => 'required'
             ],
             [
-                'email.required'=> 'Vui lòng nhập email',
-                'email.email' => 'Không đúng định dạng',
-                'first_name.required' => 'First Name không được để trống',
-                'email.unique' => 'Email đã có người sử dụng',
-                'cpassword.same' =>'Mật khẩu không giống nhau',
-                'password.min' => 'Mật khẩu ít nhất 6 kí tự',
-                'phone.required'=> 'Phone không được để trống',
-                'address1.required' => 'Address 1 không được để trống',
-                'country.required' => 'Country không được để trống'
+                'email.required'        => 'Email is required',
+                'email.email'           => 'Email format is not correct',
+                'first_name.required'   => 'First Name is required',
+                'email.unique'          => 'Email Address is exists',
+                'cpassword.same'        =>'Re password is not same as password',
+                'password.min'          => 'Password is min 6 character',
+                'phone.required'        => 'Phone is required',
+                'address1.required'     => 'Address1 is required',
+                'country.required'      => 'Country is required'
             ]
         );
 
@@ -72,23 +72,23 @@ class CustomerController extends Controller
         $password = $request->password;
         $this->validate($request,
             [
-                'email' => 'required|email',
-                'password'=> 'required|min:6|max:20'
+                'email'         => 'required|email',
+                'password'      => 'required|min:6|max:20'
             ],
             [
-             'email.required'=> 'Vui lòng nhập email',
-             'email.email' => 'Không đúng định dạng',
-             'password.min' => 'Mật khẩu ít nhất 6 kí tự'
+             'email.required'   => 'Email is required',
+             'email.email'      => 'Email format is not correct',
+             'password.min'     => 'Password is min 6 character'
             ]
         );
 
         $data = array('email' => $email, 'password' => $password);
         if (Auth::attempt($data) && $request->in_checkout == 1){
-          return redirect()->route('checkout.cart')->with('thanhcong','Đã đăng nhập thành công nhé');
+          return redirect()->route('checkout.cart')->with('thanhcong','Login Success');
         }elseif (Auth::attempt($data)) {
-            return redirect()->route('customer.view.profile', ['id' => Auth::user()->id])->with('thanhcong', 'Đã đăng nhập thành công nhé');
+            return redirect()->route('customer.view.profile', ['id' => Auth::user()->id])->with('thanhcong', 'Login Success');
         }else{
-            return redirect()->back()->with('thatbai','Đăng nhập không thành công nhé');
+            return redirect()->back()->with('thatbai','Login Success');
         }
     }
 
