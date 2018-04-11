@@ -31,7 +31,7 @@
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
             </li>
-            <li class="treeview">
+            <li class="treeview {{MenuActive::active(array('admin/product/list','admin/category/list'))}}">
                 <a href="#">
                     <i class="fa fa-suitcase"></i>
                     <span>Catalog</span>
@@ -40,7 +40,7 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="{{route('admin.product.list')}}"><i class="fa fa-circle-o"></i> Manage Products</a></li>
+                    <li class="{{MenuActive::active(array('admin/product/list'))}}"><a href="{{route('admin.product.list')}}"><i class="fa fa-circle-o"></i> Manage Products</a></li>
                     <li><a href="{{route('admin.category.list')}}"><i class="fa fa-circle-o"></i> Manage Categories</a></li>
                 </ul>
             </li>

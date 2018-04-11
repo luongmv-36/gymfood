@@ -229,38 +229,10 @@
                                     </select>
                                 </div>
                                 <div class="limiter">
-                                    Show :
-                                    <select name="">
-                                        <option value="3" selected>
-                                            3
-                                        </option>
-                                        <option value="6">
-                                            6
-                                        </option>
-                                        <option value="9">
-                                            9
-                                        </option>
-                                    </select>
                                 </div>
                             </div>
                             <div class="pager">
-                                <a href="#" class="prev-page">
-                                    <i class="fa fa-angle-left">
-                                    </i>
-                                </a>
-                                <a href="#" class="active">
-                                    1
-                                </a>
-                                <a href="#">
-                                    2
-                                </a>
-                                <a href="#">
-                                    3
-                                </a>
-                                <a href="#" class="next-page">
-                                    <i class="fa fa-angle-right">
-                                    </i>
-                                </a>
+
                             </div>
                         </div>
                         <ul class="products-listItem">
@@ -323,63 +295,7 @@
                                 @endif
                         </ul>
                         <div class="toolbar">
-                            <div class="sorter bottom">
-                                <div class="view-mode">
-                                    <a href="#" class="list active">
-                                        List
-                                    </a>
-                                    <a href="productgird.html" class="grid">
-                                        Grid
-                                    </a>
-                                </div>
-                                <div class="sort-by">
-                                    Sort by :
-                                    <select name="" >
-                                        <option value="Default" selected>
-                                            Default
-                                        </option>
-                                        <option value="Name">
-                                            Name
-                                        </option>
-                                        <option value="Price">
-                                            Price
-                                        </option>
-                                    </select>
-                                </div>
-                                <div class="limiter">
-                                    Show :
-                                    <select name="" >
-                                        <option value="3" selected>
-                                            3
-                                        </option>
-                                        <option value="6">
-                                            6
-                                        </option>
-                                        <option value="9">
-                                            9
-                                        </option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="pager">
-                                <a href="#" class="prev-page">
-                                    <i class="fa fa-angle-left">
-                                    </i>
-                                </a>
-                                <a href="#" class="active">
-                                    1
-                                </a>
-                                <a href="#">
-                                    2
-                                </a>
-                                <a href="#">
-                                    3
-                                </a>
-                                <a href="#" class="next-page">
-                                    <i class="fa fa-angle-right">
-                                    </i>
-                                </a>
-                            </div>
+                            {{$list_product->links()}}
                         </div>
                     </div>
                 </div>
