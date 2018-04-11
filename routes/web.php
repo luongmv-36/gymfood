@@ -97,6 +97,7 @@ Route::group(['middleware' => ['admin']],function (){
 
     //Customer**********************************************************
         Route::get('/customer/list',['as' => 'admin.customer','uses'=> 'Admin\CustomerController@listCustomer']);
+        Route::get('/customer/create/{id?}',['as' => 'admin.customer.create','uses'=> 'Admin\CustomerController@formCreateCustomer']);
 
     //orders************************************************************
         Route::get('/order/list',['as' => 'admin.orders.list','uses'=> 'Admin\OrdersController@listOrders']);

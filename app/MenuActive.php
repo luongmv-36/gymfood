@@ -1,6 +1,7 @@
 <?php
 namespace App;
 use Illuminate\Http\Request;
+use App\User;
 
 class MenuActive
 {
@@ -13,6 +14,12 @@ class MenuActive
             }
         }
         return '';
+    }
+
+    public static function totalCustomer()
+    {
+        return User::where('is_admin', null)->count();
+
     }
 
 }

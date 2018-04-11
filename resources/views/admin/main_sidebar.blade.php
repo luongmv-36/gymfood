@@ -44,11 +44,11 @@
                     <li class="{{MenuActive::active(array('admin/category/list'))}}"><a href="{{route('admin.category.list')}}"><i class="fa fa-circle-o"></i> Manage Categories</a></li>
                 </ul>
             </li>
-            <li>
+            <li class="{{MenuActive::active(array('admin/customer/list'))}}">
                 <a href="{{route('admin.customer')}}">
                     <i class="fa fa-users"></i> <span>Customer</span>
             <span class="pull-right-container">
-              <small class="label pull-right bg-green">103</small>
+              <small class="label pull-right bg-green">{{MenuActive::totalCustomer()}}</small>
             </span>
                 </a>
             </li>

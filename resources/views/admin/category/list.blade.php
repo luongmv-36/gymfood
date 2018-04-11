@@ -54,7 +54,7 @@
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->images}}</td>
                                     <td>{{$item->active}}</td>
-                                    <td style="width: 100%">
+                                    <td style="width: 100%;float: right">
                                         <div class="btn-group">
                                             <a type="button" class="btn btn-info" href="{{route('admin.category.create',['id' => $item->id])}}">View</a>
                                             <a type="button" class="btn btn-primary" href="{{route('admin.category.create',['id' => $item->id])}}">Edit</a>

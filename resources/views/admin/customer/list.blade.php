@@ -44,6 +44,7 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>ID Address</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                     {{--<th>Action</th>--}}
                                 </tr>
@@ -55,10 +56,13 @@
                                         <td>{{$item->name}}</td>
                                         <td>{{$item->email}}</td>
                                         <td>{{$item->id_address}}</td>
-                                        <td style="width: 100%">
+                                        <td>
+                                          <span class="label label-success">Active</span>
+                                        </td>
+                                        <td style="width: 100%;float: right">
                                             <div class="btn-group">
-                                                <a type="button" class="btn btn-info" href="#">View</a>
-                                                <a type="button" class="btn btn-primary" href="#">Edit</a>
+                                                <a type="button" class="btn btn-info" href="{{route('admin.customer.create')}}">View</a>
+                                                <a type="button" class="btn btn-primary" href="{{route('admin.customer.create')}}">Edit</a>
                                                 <a type="button" class="btn btn-danger" href="#">Delete</a>
                                             </div>
                                         </td>
