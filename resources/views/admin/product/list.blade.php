@@ -22,7 +22,7 @@
 
                     <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">Data Table With Full Features</h3>
+                            <h3 class="box-title">Product List</h3>
                         </div>
                         @if(Session::has('thongbao'))
                             <div class="alert alert-success">{{Session::get('thongbao')}}</div>
@@ -56,10 +56,10 @@
                                         <td>{{$item->id}}</td>
                                         <td>{{$item->name}}</td>
                                         <td>{{$item->price}}<small style="margin-left: 3px">(vnd)</small></td>
-                                        <td><img src="{{URL::to('images').'/'.$item->images}}" width="100px" height="100px"/></td>
+                                        <td><img src="{{URL::to('images').'/'.$item->images}}" width="100px" height="auto"/></td>
                                         <td>{{$item->active}}</td>
                                         <td>{{$item->category->name}}</td>
-                                        <td style="width: 100%">
+                                        <td style="width: 100%;float: right">
                                             <div class="btn-group">
                                                 <a type="button" class="btn btn-info" href="{{route('admin.product.create',['id' => $item->id])}}">View</a>
                                                 <a type="button" class="btn btn-primary" href="{{route('admin.product.create',['id' => $item->id])}}">Edit</a>

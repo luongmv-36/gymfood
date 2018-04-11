@@ -80,7 +80,7 @@
                                     <label for="inputEmail3" class="col-sm-2 control-label">Images Normal</label>
                                     <div class="col-sm-10">
                                         @if(!empty($product_data) && $product_data->id)
-                                        <img src="{{URL::to('/')}}/images/{{$product_data->images}}" width="300px" height="200px"/>
+                                        <img src="{{URL::to('/')}}/images/{{$product_data->images}}" width="200" height="auto"/>
                                         @endif
                                         <input type="file" name="images">
                                         <p class="help-block">Example block-level help text here.</p>
@@ -90,7 +90,7 @@
                                         <label for="inputEmail3" class="col-sm-2 control-label">Images Zoom</label>
                                         <div class="col-sm-10">
                                             @if(!empty($product_data) && $product_data->id)
-                                                <img src="{{URL::to('/')}}/images/{{$product_data->images_zoom}}" width="300px" height="200px"/>
+                                                <img src="{{URL::to('/')}}/images/{{$product_data->images_zoom}}" width="200" height="auto"/>
                                             @endif
                                             <input type="file" name="images_zoom">
                                             <p class="help-block">Example block-level help text here.</p>

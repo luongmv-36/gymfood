@@ -17,7 +17,7 @@
                   <div class="row">
                 <div class="col-sm-9">
                     @if(Session::has('thongbao'))
-                        <div class="alert alert-warning">{{Session::get('thongbao')}}</div>
+                        <div class="alert alert-success">{{Session::get('thongbao')}}</div>
                     @endif
                         <table class="table table-condensed">
                             <thead>

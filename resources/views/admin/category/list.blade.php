@@ -22,7 +22,7 @@
 
                     <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">Data Table With Full Features</h3>
+                            <h3 class="box-title">Categories</h3>
                         </div>
                         @if(Session::has('thongbao'))
                             <div class="alert alert-success">{{Session::get('thongbao')}}</div>
