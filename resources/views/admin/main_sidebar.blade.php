@@ -52,7 +52,7 @@
             </span>
                 </a>
             </li>
-            <li class="treeview">
+            <li class="treeview {{MenuActive::active(array('admin/order/list','admin/order/view/*'))}}">
                 <a href="#">
                     <i class="fa fa-asterisk"></i>
                     <span>Sales</span>
@@ -61,9 +61,9 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class=""><a href="{{route('admin.orders.list')}}"><i class="fa fa-heart-o"></i> Manage Orders</a></li>
-                    <li><a href="{{route('admin.category.list')}}"><i class="fa fa-heart-o"></i> Manage Invoice</a></li>
-                    <li><a href="{{route('admin.category.list')}}"><i class="fa fa-heart-o"></i> Manage Shipment</a></li>
+                    <li class="{{MenuActive::active(array('admin/order/list','admin/order/view/*'))}}"><a href="{{route('admin.orders.list')}}"><i class="fa fa-shopping-cart"></i> Manage Orders</a></li>
+                    <li><a href="#"><i class="fa fa-money"></i> Manage Invoice</a></li>
+                    <li><a href="#"><i class="fa fa-truck"></i> Manage Shipment</a></li>
                 </ul>
             </li>
         </ul>

@@ -54,7 +54,7 @@
                                     <td><code>{{$item->status}}</code></td>
                                     <td>{{$item->total}}</td>
                                     <td>{{$item->updated_at}}</td>
-                                    <td style="width: 100%">
+                                    <td style="width: 100%;float: right">
                                         <div class="btn-group">
                                             <a type="button" class="btn btn-info" href="{{route('admin.orders.view',['id' => $item->id])}}">View</a>
                                         </div>
