@@ -22,7 +22,7 @@
 
                     <div class="box">
                         <div class="box-header">
-                            <h3 class="box-title">Data Table With Full Features</h3>
+                            <h3 class="box-title">Customer List</h3>
                         </div>
                         @if(Session::has('thongbao'))
                             <div class="alert alert-success">{{Session::get('thongbao')}}</div>
@@ -61,8 +61,8 @@
                                         </td>
                                         <td style="width: 100%;float: right">
                                             <div class="btn-group">
-                                                <a type="button" class="btn btn-info" href="{{route('admin.customer.create')}}">View</a>
-                                                <a type="button" class="btn btn-primary" href="{{route('admin.customer.create')}}">Edit</a>
+                                                <a type="button" class="btn btn-info" href="{{route('admin.customer.create',['id' => $item->id])}}">View</a>
+                                                <a type="button" class="btn btn-primary" href="{{route('admin.customer.create',['id' => $item->id])}}">Edit</a>
                                                 <a type="button" class="btn btn-danger" href="#">Delete</a>
                                             </div>
                                         </td>

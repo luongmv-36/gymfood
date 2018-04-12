@@ -45,7 +45,7 @@
                 </ul>
             </li>
             <li class="{{MenuActive::active(array('admin/customer/list'))}}">
-                <a href="{{route('admin.customer')}}">
+                <a href="{{route('admin.customer.list')}}">
                     <i class="fa fa-users"></i> <span>Customer</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green">{{MenuActive::totalCustomer()}}</small>

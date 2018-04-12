@@ -27,7 +27,7 @@
                                     New Customer
                                 @endif
                             </h3>
-                            <a href="{{route('admin.product.list')}}"><button type="submit" class="btn btn-primary" style="float: right"><i class="fa fa-fw fa-step-backward"></i> Back</button></a>
+                            <a href="{{route('admin.customer.list')}}"><button type="submit" class="btn btn-primary" style="float: right"><i class="fa fa-fw fa-step-backward"></i> Back</button></a>
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
@@ -49,12 +49,17 @@
                                     <h4>Customer Information</h4>
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class=" fa fa-user-md"></i></span>
-                                        <input type="text" class="form-control" name="name" required="true" value="{{($customer) ? ($customer->name) : ''}}">
+                                        <input type="text" class="form-control" name="name" required="true" value="{{($customer) ? ($customer->name) : ''}}"/>
                                     </div>
                                     <br>
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
-                                        <input type="email" class="form-control" placeholder="Email" name="email" required="true" value="{{($customer) ? ($customer->email) : ''}}">
+                                        <input type="email" class="form-control" placeholder="Email" name="email" required="true" value="{{($customer) ? ($customer->email) : ''}}"/>
+                                    </div>
+                                    <br>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
+                                        <input type="number" required="true" class="form-control" name="phone" value="{{($customerAdress) ? ($customerAdress->phone) : ''}}"/>
                                     </div>
                                     <br>
                                     <div class="input-group">
