@@ -31,7 +31,7 @@
                         <div class="box-body">
                             <thead>
                             <tr>
-                                <a href="{{route('admin.product.create')}}">
+                                <a href="{{route('admin.customer.create')}}">
                                     <button class="btn btn-block btn-primary" style="width: 100px;float: right;margin-bottom: 3px" type="button"><i class="fa fa-fw fa-edit"></i> New Item</button>
                                 </a>
                             </tr>
@@ -63,7 +63,7 @@
                                             <div class="btn-group">
                                                 <a type="button" class="btn btn-info" href="{{route('admin.customer.create',['id' => $item->id])}}">View</a>
                                                 <a type="button" class="btn btn-primary" href="{{route('admin.customer.create',['id' => $item->id])}}">Edit</a>
-                                                <a type="button" class="btn btn-danger" href="#">Delete</a>
+                                                <a type="button" class="btn btn-danger" href="{{route('admin.customer.delete',['id' => $item->id])}}">Delete</a>
                                             </div>
                                         </td>
                                     </tr>

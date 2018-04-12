@@ -98,6 +98,8 @@ Route::group(['middleware' => ['admin']],function (){
     //Customer**********************************************************
         Route::get('/customer/list',['as' => 'admin.customer.list','uses'=> 'Admin\CustomerController@listCustomer']);
         Route::get('/customer/create/{id?}',['as' => 'admin.customer.create','uses'=> 'Admin\CustomerController@formCreateCustomer']);
+        Route::post('/customer/admin_create/',['as' => 'admin.customer.new_or_update','uses'=> 'Admin\CustomerController@createOrUpdate']);
+        Route::get('/customer/admin_delete/{id?}',['as' => 'admin.customer.delete','uses'=> 'Admin\CustomerController@deleteCustomer']);
 
     //orders************************************************************
         Route::get('/order/list',['as' => 'admin.orders.list','uses'=> 'Admin\OrdersController@listOrders']);

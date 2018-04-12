@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="{{URL::to('/')}}/adminhtml/bower_components/bootstrap-daterangepicker/daterangepicker.css">
     <!-- bootstrap wysihtml5 - text editor -->
     <link rel="stylesheet" href="{{URL::to('/')}}/adminhtml/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <link rel="stylesheet" href="{{URL::to('/')}}/adminhtml/plugins/iCheck/all.css">
     <!-- jQuery 3 -->
     <script src="{{URL::to('/')}}/adminhtml/bower_components/jquery/dist/jquery.min.js"></script>
     <!-- jQuery UI 1.11.4 -->

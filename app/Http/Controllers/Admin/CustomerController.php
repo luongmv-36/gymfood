@@ -3,9 +3,11 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
 use App\User;
 use App\CustomerAddress;
+use Illuminate\Support\Facades\Redirect;
 
 class CustomerController extends Controller
 {
@@ -24,5 +26,21 @@ class CustomerController extends Controller
        }
 
        return view('admin.customer.new',compact('customer','customerAdress'));
+    }
+
+    public function createOrUpdate(Request $request){
+        Session::flash('message', "This Feature is Demo");
+        return Redirect::back();
+    }
+
+    public function deleteCustomer($id = null){
+       if ($id){
+           $customer = User::find($id);
+           if ($customer->id) {
+               $customer->delete();
+               Session::flash('thongbao','Deleted');
+           }
+       }
+       return redirect()->route('admin.customer.list');
     }
 }

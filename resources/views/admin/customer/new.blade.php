@@ -31,11 +31,11 @@
                         </div>
                         <!-- /.box-header -->
                         <!-- form start -->
-                        <form class="form-horizontal" action="{{route('admin.product.postcreate')}}" method="post" enctype="multipart/form-data">
+                        <form class="form-horizontal" action="{{route('admin.customer.new_or_update')}}" method="post" enctype="multipart/form-data">
                             {{csrf_field()}}
                             <div class="box-body">
-                                @if(Session::has('thongbao'))
-                                    <div class="alert alert-success">{{Session::get('thongbao')}}</div>
+                                @if (Session::has('message'))
+                                    <div class="alert alert-info">{{ Session::get('message') }}</div>
                                 @endif
                                     @if ($errors->any())
                                         <div class="alert alert-danger">
@@ -48,25 +48,48 @@
                                     @endif
                                     <h4>Customer Information</h4>
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class=" fa fa-user-md"></i></span>
+                                        <span class="input-group-addon"><i>Name </i><i class=" fa fa-user-md"></i></span>
                                         <input type="text" class="form-control" name="name" required="true" value="{{($customer) ? ($customer->name) : ''}}"/>
                                     </div>
                                     <br>
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-envelope"></i></span>
+                                        <span class="input-group-addon"><i>Email </i><i class="fa fa-envelope"></i></span>
                                         <input type="email" class="form-control" placeholder="Email" name="email" required="true" value="{{($customer) ? ($customer->email) : ''}}"/>
                                     </div>
                                     <br>
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-phone"></i></span>
-                                        <input type="number" required="true" class="form-control" name="phone" value="{{($customerAdress) ? ($customerAdress->phone) : ''}}"/>
-                                    </div>
+                                    @if($customer)
+                                    <label>
+                                        <input type="checkbox" class="minimal" id="is_change_password" name="is_change_password">
+                                    </label>
+                                    <i style="color: red">Change Password</i>
                                     <br>
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
-                                        <input type="text" class="form-control">
-                                        <span class="input-group-addon"><i class="fa fa-ambulance"></i></span>
+                                    <div class="password_group" style="display: none">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i>OldPassword </i><i class="fa fa-key"></i></span>
+                                            <input type="password" class="form-control password" name="old_password" required="true" value="" minlength="6"/>
+                                        </div>
+                                        <br>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i>NewPassword </i><i class="fa fa-key"></i></span>
+                                            <input type="password" class="form-control password" name="new_password" required="true" value="" minlength="6"/>
+                                        </div>
+                                        <br>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i>Re-Password </i><i class="fa fa-key"></i></span>
+                                            <input type="password" class="form-control password" name="re_password" required="true" value=""minlength="6"/>
+                                        </div>
                                     </div>
+                                    @else
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i>NewPassword </i><i class="fa fa-key"></i></span>
+                                            <input type="password" class="form-control password" name="new_password" required="true" value="" minlength="6"/>
+                                        </div>
+                                        <br>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i>Re-Password </i><i class="fa fa-key"></i></span>
+                                            <input type="password" class="form-control password" name="re_password" required="true" value="" minlength="6"/>
+                                        </div>
+                                    @endif
                             </div>
                             <!-- /.box-body -->
 
@@ -87,4 +110,16 @@
 @section('extra_js')
     <script src="{{URL::to('/')}}/adminhtml/bower_components/datatables.net/js/jquery.dataTables.min.js"></script>
     <script src="{{URL::to('/')}}/adminhtml/bower_components/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <script>
+        $('input:password').val('_');
+        $('#is_change_password').change(function() {
+            if ($('#is_change_password').is(":checked")) {
+                $('input:password').val('');
+                $('.password_group').show();
+            }else {
+                $('input:password').val('_');
+                $('.password_group').hide();
+            }
+        });
+    </script>
 @stop
