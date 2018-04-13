@@ -31,7 +31,7 @@
                         <div class="box-body">
                             <thead>
                             <tr>
-                                <a href="{{route('admin.category.create')}}">
+                                <a href="#">
                                     <button class="btn btn-block btn-primary" style="width: 100px;float: right;margin-bottom: 3px" type="button"><i class="fa fa-fw fa-edit"></i> New Item</button>
                                 </a>
                             </tr>

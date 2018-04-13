@@ -104,6 +104,11 @@ Route::group(['middleware' => ['admin']],function (){
     //orders************************************************************
         Route::get('/order/list',['as' => 'admin.orders.list','uses'=> 'Admin\OrdersController@listOrders']);
         Route::get('/order/view/{id}',['as' => 'admin.orders.view','uses'=> 'Admin\OrdersController@view']);
+
+    //setting
+        Route::get('/setting/shipping/',['as' => 'admin.setting.shipping', 'uses' => 'Admin\SettingController@formShipping']);
+        Route::post('/setting/shipping/',['as' => 'admin.setting.shipping', 'uses' => 'Admin\SettingController@updateShipping']);
+
     });
 });
 /**

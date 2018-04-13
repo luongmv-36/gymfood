@@ -66,6 +66,17 @@
                     <li><a href="#"><i class="fa fa-truck"></i> Manage Shipment</a></li>
                 </ul>
             </li>
+            <li class="treeview {{MenuActive::active(array('admin/setting/shipping'))}}">
+                <a href="#">
+                    <i class="fa fa-cogs"></i>
+                    <span>Setting</span>
+                    <span class="pull-right-container">
+            </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li class="{{MenuActive::active(array('admin/setting/shipping'))}}"><a href="{{route('admin.setting.shipping')}}"><i class="fa  fa-external-link-square"></i> Shipping Method</a></li>
+                </ul>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->

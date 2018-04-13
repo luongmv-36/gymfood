@@ -32,24 +32,20 @@
                                                     Shipping Method
                                                 </h5>
                                                 <label>
+                                                    @if($shipping_method)
+                                                        @foreach($shipping_method as $ship)
                               <span class="input-radio">
-                                <input type="radio" name="shipping_method" value="ship1" required>
+                                <input type="radio" name="shipping_method" value="{{$ship->shipping_name}}" required>
                               </span>
                               <span class="text">
-                                Shipping 1
+                                {{$ship->shipping_name}}
                               </span>
+                                                        @endforeach
+                                                    @else
+                                                        <input type="hidden" name="shipping_method_hide" required="true">
+                                                    @endif
                                                 </label>
-                                                <label>
-                              <span class="input-radio">
-                                <input type="radio" name="shipping_method" value="ship2" checked="checked">
-                              </span>
-                              <span class="text">
-                                 Shipping 2
-                              </span>
-                                                </label>
-                                                <p class="requir">
-                                                    ABC
-                                                </p>
+                                                <i>___________________________</i>
                                                 <label>
                                                     <h5>
                                                         Payment Method
@@ -58,23 +54,12 @@
 
                                                 <label>
                               <span class="input-radio">
-                                <input type="radio" name="payment_method" value="payment1" required>
+                                <input type="radio" name="payment_method" value="OnyPay" required>
                               </span>
                               <span class="text">
-                                Shipping 1
+                                OnePay
                               </span>
                                                 </label>
-                                                <label>
-                              <span class="input-radio">
-                                <input type="radio" name="payment_method" value="payment2" checked="checked">
-                              </span>
-                              <span class="text">
-                                 Shipping 2
-                              </span>
-                                                </label>
-                                                <p class="requir">
-                                                    XYZ
-                                                </p>
                                                 <label>
                                                     <button type="submit">
                                                         Continue

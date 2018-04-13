@@ -29,9 +29,9 @@ class ProductController extends Controller
         $check_id = $request->has('id');
         if ($check_id){
             $product = $product::find($request->id);
-            $thongbao = 'Edit thành công';
+            $thongbao = 'Edit Success ';
         }else{
-            $thongbao = "Đã thêm thành công";
+            $thongbao = "Added Success ";
         }
         $getimageName = null;
         $getimageNameZoom = null;
@@ -87,9 +87,9 @@ class ProductController extends Controller
 //            \File::delete($imagezoom_path);
             $del_file = " Đã xóa file $image_path and $imagezoom_path";
 
-            return redirect()->back()->with('thongbao','Xóa thành công id : '.$id.$del_file);
+            return redirect()->back()->with('thongbao','Delete Success : '.$id.$del_file);
         }else{
-            return redirect()->back()->with('thongbao','Không tồn tại  :id '.$id);
+            return redirect()->back()->with('thongbao','Not Available  :id '.$id);
         }
     }
 }

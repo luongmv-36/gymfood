@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Session;
 use App\Orders;
 use App\OrderAddress;
 use App\OrderItems;
+use App\ShippingMethod;
+
 class CheckoutController extends Controller
 {
 
@@ -28,8 +30,9 @@ class CheckoutController extends Controller
 
     public function step3(Request $request){
         $data = $request->input();
+        $shipping_method = ShippingMethod::all();
         Session::put('orderAddress',$data);
-        return view('frontend.checkout.step3');
+        return view('frontend.checkout.step3',compact('shipping_method'));
     }
 
     public function step4(Request $request){
