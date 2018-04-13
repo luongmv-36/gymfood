@@ -60,7 +60,11 @@ class CheckoutController extends Controller
         $order->total = $total;
         if (Auth::check()){
             $order->customer_id = Auth::id();
+            $order->bill_name   = Auth::user()->name;
+        }else{
+            $order->bill_name   = $request->name;;
         }
+        $order->ship_name = '';
         $order->shipping_method = $request->shipping_method;
         $order->payment_method = $request->payment_method;
 

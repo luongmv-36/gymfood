@@ -18,7 +18,7 @@
         <!-- Main content -->
         <section class="content">
             <div class="row">
-                {{$category_data}}
+                {{--{{$category_data}}--}}
                     <div class="box box-primary">
                         <div class="box-header with-border">
                             <h3 class="box-title">

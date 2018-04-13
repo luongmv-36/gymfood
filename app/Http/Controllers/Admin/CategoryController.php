@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Product;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Category;
@@ -10,7 +11,13 @@ class CategoryController extends Controller
 {
     public function listCategory(){
         $category = Category::all()->sortByDesc('updated_at');
-        return view('admin.category.list',compact('category'));
+        $count_cat = array();
+        foreach ($category as $cat)
+        {
+            $pro = Product::where('category_id',$cat->id)->get()->count();
+            $count_cat[$cat->id] = $pro;
+        }
+        return view('admin.category.list',compact('category','count_cat'));
     }
     
     public function formCreate($id = null){

@@ -41,7 +41,11 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
+                                    <th>Bill to Name</th>
+                                    <th>Ship to Name</th>
                                     <th>Status</th>
+                                    <th>Invoice</th>
+                                    <th>Shipment</th>
                                     <th>Total</th>
                                     <th>Time Update</th>
                                     <th>Action</th>
@@ -51,7 +55,23 @@
                                 @foreach($orders as $item)
                                 <tr>
                                     <td>{{$item->id}}</td>
-                                    <td><code>{{$item->status}}</code></td>
+                                    <td>{{$item->bill_name}}</td>
+                                    <td>{{$item->ship_name}}</td>
+                                    <td><span class="label label-warning">{{$item->status}}</span></td>
+                                    <td>
+                                        @if($item->invoice_id)
+                                            <i class="fa fa-fw fa-check" style="color: #00A65A"></i>
+                                        @else
+                                            <i class="fa fa-fw fa-close " style="color: #D73925"></i>
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @if($item->shipment_id)
+                                            <i class="fa fa-fw fa-check" style="color: #00A65A"></i>
+                                        @else
+                                            <i class="fa fa-fw fa-close " style="color: #D73925"></i>
+                                        @endif
+                                    </td>
                                     <td>{{$item->total}}</td>
                                     <td>{{$item->updated_at}}</td>
                                     <td style="width: 100%;float: right">

@@ -81,7 +81,7 @@ Route::post('admin/login',[
 ]);
 Route::group(['middleware' => ['admin']],function (){
     Route::group(['prefix' => 'admin'], function (){
-        Route::get('/index',['as' => 'dashboard','uses'=>'Admin\DashboardController@dashboard']);
+        Route::get('/',['as' => 'admin.dashboard','uses'=>'Admin\DashboardController@dashboard']);
 
     //category**********************************************************
         Route::get('/category/list',['as' => 'admin.category.list','uses'=>'Admin\CategoryController@listCategory']);

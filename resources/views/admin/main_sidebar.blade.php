@@ -27,7 +27,7 @@
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
             <li class="">
-                <a href="{{route('dashboard')}}">
+                <a href="{{route('admin.dashboard')}}">
                     <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                 </a>
             </li>
@@ -40,8 +40,8 @@
             </span>
                 </a>
                 <ul class="treeview-menu">
-                    <li class="{{MenuActive::active(array('admin/product/list'))}}"><a href="{{route('admin.product.list')}}"><i class="fa fa-circle-o"></i> Manage Products</a></li>
-                    <li class="{{MenuActive::active(array('admin/category/list'))}}"><a href="{{route('admin.category.list')}}"><i class="fa fa-circle-o"></i> Manage Categories</a></li>
+                    <li class="{{MenuActive::active(array('admin/product/list'))}}"><a href="{{route('admin.product.list')}}"><i class="fa fa-laptop"></i> Manage Products</a></li>
+                    <li class="{{MenuActive::active(array('admin/category/list'))}}"><a href="{{route('admin.category.list')}}"><i class="fa fa-navicon"></i> Manage Categories</a></li>
                 </ul>
             </li>
             <li class="{{MenuActive::active(array('admin/customer/list'))}}">
@@ -57,7 +57,7 @@
                     <i class="fa fa-asterisk"></i>
                     <span>Sales</span>
             <span class="pull-right-container">
-              <span class="label label-primary pull-right">3</span>
+              <span class="label label-primary pull-right">{{MenuActive::totalOrder()}}</span>
             </span>
                 </a>
                 <ul class="treeview-menu">

@@ -75,6 +75,7 @@
                                     <th>Name</th>
                                     <th>Email</th>
                                     <th>ID Address</th>
+                                    <th>Status</th>
                                     <th>Action</th>
                                 </tr>
                                 </tfoot>

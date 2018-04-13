@@ -16,7 +16,14 @@
                     Sorry, an error has occured, Requested page not found!
                 </div>
                 <div class="error-actions">
-                    <a href="{{route('home')}}" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>
+                    <?php
+                        if (Auth::check() && Auth::user()->isAdmin()){
+                            $url = route('home');
+                        }else{
+                            $url = route('admin.dashboard');
+                        }
+                    ?>
+                    <a href="{{$url}}" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>
                         Return Home Page</a><a href="#" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-envelope"></span> Contact Support </a>
                 </div>
             </div>

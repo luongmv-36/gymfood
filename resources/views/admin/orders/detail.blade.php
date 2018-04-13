@@ -57,6 +57,7 @@
                                 <b>Gender:</b> Male<br>
                             </div>
                             <!-- /.col -->
+                            @if($orders->address)
                             <div class="col-sm-4 invoice-col">
                                 <code>Shipping Address</code>
                                 <address>
@@ -68,6 +69,14 @@
                                     Email: {{$orders->address->email}}
                                 </address>
                             </div>
+                            @else
+                                <div class="col-sm-4 invoice-col">
+                                    <code>Shipping Address</code>
+                                    <address>
+                                        Empty
+                                    </address>
+                                </div>
+                            @endif
                             <!-- /.col -->
                         </div>
                         <!-- /.row -->

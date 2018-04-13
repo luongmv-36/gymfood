@@ -57,7 +57,13 @@
                                         <td>{{$item->name}}</td>
                                         <td>{{$item->price}}<small style="margin-left: 3px">(vnd)</small></td>
                                         <td><img src="{{URL::to('images').'/'.$item->images}}" width="100px" height="auto"/></td>
-                                        <td>{{$item->active}}</td>
+                                        <td>
+                                            @if($item->active)
+                                                <i class="fa fa-fw fa-check" style="color: #00A65A"></i>
+                                            @else
+                                                <i class="fa fa-fw fa-close " style="color: #D73925"></i>
+                                            @endif
+                                        </td>
                                         <td>{{$item->category->name}}</td>
                                         <td style="width: 100%;float: right">
                                             <div class="btn-group">

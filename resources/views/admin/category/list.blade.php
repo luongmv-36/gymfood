@@ -43,6 +43,7 @@
                                     <th>ID</th>
                                     <th>Name</th>
                                     <th>Path Images</th>
+                                    <th>Total Product</th>
                                     <th>Active</th>
                                     <th>Action</th>
                                 </tr>
@@ -53,7 +54,14 @@
                                     <td>{{$item->id}}</td>
                                     <td>{{$item->name}}</td>
                                     <td>{{$item->images}}</td>
-                                    <td>{{$item->active}}</td>
+                                    <td><code>{{$count_cat[$item->id]}}</code></td>
+                                    <td>
+                                    @if($item->active)
+                                        <i class="fa fa-fw fa-check" style="color: #00A65A"></i>
+                                    @else
+                                        <i class="fa fa-fw fa-close " style="color: #D73925"></i>
+                                    @endif
+                                    </td>
                                     <td style="width: 100%;float: right">
                                         <div class="btn-group">
                                             <a type="button" class="btn btn-info" href="{{route('admin.category.create',['id' => $item->id])}}">View</a>
